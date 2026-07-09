@@ -12,7 +12,8 @@ import {
   Car, 
   Plane,
   ChevronRight,
-  Sparkles
+  Sparkles,
+  Building2
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -62,6 +63,20 @@ export default function BottomActionBar() {
       subtitle: "Exclusive private jet hire, helicopter transit, and premium VIP aviation.",
       path: "/services/private-jet-charter",
       icon: <Plane className="w-5 h-5" />
+    },
+    {
+      id: "property-movement",
+      title: "Property Movement",
+      subtitle: "Household & office relocation, heavy lifting, and asset transport.",
+      path: "/services/property-movement",
+      icon: <Building2 className="w-5 h-5" />
+    },
+    {
+      id: "haulage",
+      title: "Haulage Services",
+      subtitle: "Bulk cargo, heavy equipment, and construction material haulage.",
+      path: "/services/haulage",
+      icon: <Truck className="w-5 h-5" />
     }
   ];
 

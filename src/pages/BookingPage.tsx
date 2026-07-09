@@ -1,10 +1,11 @@
 import { useParams, Link, useNavigate, useSearchParams } from "react-router-dom";
 import { 
   TravelsForm, DeliveriesForm, 
-  PrivateJetForm, LuxuryCarForm 
+  PrivateJetForm, LuxuryCarForm,
+  PropertyMovementForm, HaulageForm 
 } from "../components/forms/BookingForms";
 import PageTransition from "../components/shared/PageTransition";
-import { Globe, Send, Car, Plane, Calendar, ArrowLeft } from "lucide-react";
+import { Globe, Send, Car, Plane, Truck, Home, Calendar, ArrowLeft } from "lucide-react";
 
 export default function BookingPage() {
   const { serviceSlug } = useParams();
@@ -16,7 +17,9 @@ export default function BookingPage() {
     { slug: "travels", label: "Travels", icon: <Globe className="w-4 h-4" /> },
     { slug: "deliveries", label: "Deliveries", icon: <Send className="w-4 h-4" /> },
     { slug: "luxury-car-rentals", label: "Luxury Cars", icon: <Car className="w-4 h-4" /> },
-    { slug: "private-jet-charter", label: "Private Jet", icon: <Plane className="w-4 h-4" /> }
+    { slug: "private-jet-charter", label: "Private Jet", icon: <Plane className="w-4 h-4" /> },
+    { slug: "property-movement", label: "Property Move", icon: <Home className="w-4 h-4" /> },
+    { slug: "haulage", label: "Haulage", icon: <Truck className="w-4 h-4" /> }
   ];
 
   // Render correct form component
@@ -30,6 +33,10 @@ export default function BookingPage() {
         return <LuxuryCarForm />;
       case "private-jet-charter":
         return <PrivateJetForm />;
+      case "property-movement":
+        return <PropertyMovementForm />;
+      case "haulage":
+        return <HaulageForm />;
       default:
         return <TravelsForm initialCountry={preselectedCountry} />;
     }

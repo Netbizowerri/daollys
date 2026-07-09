@@ -28,6 +28,7 @@ export interface ServiceDetail {
   overviewCopy: string;
   imageTheme: string; // Theme description for visuals
   imageUrl: string; // Fallback stock-image URL or elegant illustration placeholder
+  videoUrl?: string; // YouTube video URL for service spotlight
   whatsIncluded: string[];
   processSteps: {
     title: string;

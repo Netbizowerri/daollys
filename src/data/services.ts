@@ -10,6 +10,7 @@ export const SERVICES: ServiceDetail[] = [
     overviewCopy: "We take the complexity out of global and local travels. From booking the best flight rates and luxury hotel stays to complete visa consulting and tailored tour packages, our expert travel officers provide end-to-end, high-touch support.",
     imageTheme: "Airport departure board / passport & boarding pass flatlay",
     imageUrl: "https://i.ibb.co/qMfk7Y21/DA-OLLYS-9.jpg",
+    videoUrl: "https://www.youtube.com/shorts/ZvaJ11TEIw8",
     whatsIncluded: [
       "Expert Visa Consulting & Complete Documentation Support",
       "International & Domestic Flight Bookings",
@@ -60,6 +61,7 @@ export const SERVICES: ServiceDetail[] = [
     overviewCopy: "Elevate your travel experience with our luxury car rentals. Tailored specifically for weddings, executive business transport, VIP escorts, and security protocol services, our elite fleet is accompanied by professional, highly polished personal chauffeurs.",
     imageTheme: "Black luxury sedan/SUV, polished exterior shot",
     imageUrl: "https://i.ibb.co/9fDM3V6/DA-OLLYS-10.jpg",
+    videoUrl: "https://www.youtube.com/shorts/SWxf1JhktPA",
     whatsIncluded: [
       "Executive Chauffeur-Driven Sedans & Luxury SUVs",
       "Pristine Wedding Fleet Vehicles with optional custom decor",
@@ -85,6 +87,7 @@ export const SERVICES: ServiceDetail[] = [
     overviewCopy: "Experience the ultimate peak of aviation luxury. Our private jet and VIP charter services bypass commercial airport crowds, flying you on your own schedule with exceptional safety, complete privacy, and unparalleled cabin hospitality.",
     imageTheme: "Elite private jet aircraft on tarmac / private aviation lounge",
     imageUrl: "https://i.ibb.co/fYF7SKtf/DA-OLLYS-11.jpg",
+    videoUrl: "https://www.youtube.com/shorts/jOhbpDhacOc",
     whatsIncluded: [
       "On-Demand Private Jet Charters & VIP Flight Solutions",
       "Private Terminal / FBO Lounge Access with zero queues",
@@ -100,6 +103,57 @@ export const SERVICES: ServiceDetail[] = [
     ],
     ctaText: "Request Jet Charter",
     bookingUrl: "/book/private-jet-charter"
+  },
+  {
+    slug: "property-movement",
+    title: "Property Movement Services",
+    subtitle: "Household & Office Relocation | Heavy Lifting | Asset Logistics",
+    iconName: "Truck",
+    shortCopy: "Professional relocation services for homes and offices — heavy lifting, asset protection, and secure transport of your valuable property.",
+    overviewCopy: "Moving your home or office shouldn't be a headache. Da Ollys Integrated Services provides end-to-end property movement solutions including careful packing, heavy lifting, furniture dismantling and reassembly, and secure transportation of all your assets. Our trained movers treat every item with the care it deserves, from fragile glassware to heavy office equipment.",
+    imageTheme: "Professional movers packing and loading furniture into a moving truck",
+    imageUrl: "https://i.ibb.co/LfbB2rb/DA-OLLYS-13.jpg",
+    videoUrl: "https://www.youtube.com/shorts/e0bX_wFk7Vg",
+    whatsIncluded: [
+      "Professional Packing & Fragile Item Wrapping",
+      "Furniture Dismantling & Reassembly On-Site",
+      "Heavy Lifting Equipment & Trained Crew",
+      "Secure Loading & Transport to Destination",
+      "Unpacking & Placement Arrangement"
+    ],
+    processSteps: [
+      { title: "Site Assessment", description: "We survey your property, assess item volumes, and map the optimal moving plan." },
+      { title: "Packing & Protection", description: "All items are professionally packed with high-grade materials and clearly labeled." },
+      { title: "Loading & Transport", description: "Our crew carefully loads and secures your items for damage-free transit." },
+      { title: "Delivery & Setup", description: "Items are delivered, unpacked, and arranged exactly where you need them." }
+    ],
+    ctaText: "Book Property Move",
+    bookingUrl: "/book/property-movement"
+  },
+  {
+    slug: "haulage",
+    title: "Haulage Services",
+    subtitle: "Bulk Cargo Haulage | Heavy Equipment Transport | Freight Logistics",
+    iconName: "Package",
+    shortCopy: "Reliable heavy-duty haulage for bulk cargo, construction materials, and heavy equipment across Nigeria.",
+    overviewCopy: "Da Ollys Integrated Services offers robust haulage and freight solutions for businesses requiring bulk cargo movement, heavy equipment transport, and construction material logistics. Our fleet of heavy-duty trucks and experienced operators ensures your goods arrive on time, every time, across all major routes in Nigeria.",
+    imageTheme: "Heavy-duty haulage truck on highway / loading dock operations",
+    imageUrl: "https://i.ibb.co/v6c5GVZT/DA-OLLYS-12.jpg",
+    whatsIncluded: [
+      "Bulk Cargo & Commodity Haulage Across Nigeria",
+      "Heavy Equipment & Machinery Transport",
+      "Construction Material Logistics",
+      "Dedicated Fleet & Scheduled Route Planning",
+      "Real-Time Cargo Tracking & Delivery Confirmation"
+    ],
+    processSteps: [
+      { title: "Cargo Assessment", description: "We evaluate your cargo type, volume, weight, and delivery route requirements." },
+      { title: "Fleet Allocation", description: "The appropriate heavy-duty truck and experienced driver are assigned to your consignment." },
+      { title: "Loading & Securement", description: "Cargo is professionally loaded, balanced, and secured for safe transit." },
+      { title: "Delivery & Proof of Service", description: "Your goods arrive at the destination with full delivery documentation and confirmation." }
+    ],
+    ctaText: "Book Haulage Service",
+    bookingUrl: "/book/haulage"
   }
 ];
 

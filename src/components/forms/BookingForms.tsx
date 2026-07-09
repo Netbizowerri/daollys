@@ -1139,3 +1139,400 @@ export function LuxuryCarForm() {
     </div>
   );
 }
+
+// -------------------------------------------------------------
+// 5. PROPERTY MOVEMENT SERVICES BOOKING FORM
+// -------------------------------------------------------------
+export function PropertyMovementForm() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    currentAddress: "",
+    destinationAddress: "",
+    propertyType: "Household",
+    moveDate: "",
+    notes: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      await fetch("https://formspree.io/f/mnjkkvgp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service_type: "Property Movement Services",
+          ...formData
+        })
+      });
+
+      navigate(`/thank-you?service=property-movement`, {
+        state: { name: formData.fullName, type: formData.propertyType }
+      });
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-xl border border-white/10">
+      <div className="mb-6">
+        <h2 className="text-xl font-extrabold text-white uppercase tracking-wide">
+          Book Property Movement
+        </h2>
+        <p className="text-xs text-gray-400 font-semibold mt-1">
+          Professional household & office relocation with careful handling and secure transport.
+        </p>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Your Full Name</label>
+            <input
+              type="text"
+              name="fullName"
+              required
+              value={formData.fullName}
+              onChange={handleChange}
+              maxLength={100}
+              placeholder="John Doe"
+              className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+            />
+          </div>
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Phone Number (WhatsApp Preferred)</label>
+            <input
+              type="tel"
+              name="phone"
+              required
+              maxLength={30}
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="+234 803 123 4567"
+              className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-1">
+          <label className="text-xs font-bold text-gray-300">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            required
+            maxLength={254}
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="john@example.com"
+            className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Current Address / Pickup Location</label>
+            <div className="relative">
+              <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <input
+                type="text"
+                name="currentAddress"
+                required
+                maxLength={200}
+                value={formData.currentAddress}
+                onChange={handleChange}
+                placeholder="Current address or landmark"
+                className="w-full bg-white/5 text-white text-xs font-semibold pl-10 pr-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+              />
+            </div>
+          </div>
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Destination / Delivery Address</label>
+            <div className="relative">
+              <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
+              <input
+                type="text"
+                name="destinationAddress"
+                required
+                maxLength={200}
+                value={formData.destinationAddress}
+                onChange={handleChange}
+                placeholder="Destination address"
+                className="w-full bg-white/5 text-white text-xs font-semibold pl-10 pr-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Property / Move Type</label>
+            <select
+              name="propertyType"
+              value={formData.propertyType}
+              onChange={handleChange}
+              className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+            >
+              <option value="Household">Household / Home Move</option>
+              <option value="Office">Office / Corporate Relocation</option>
+              <option value="Furniture">Furniture Only</option>
+              <option value="Heavy Equipment">Heavy Equipment / Machinery</option>
+              <option value="Other">Other Property Movement</option>
+            </select>
+          </div>
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Preferred Move Date</label>
+            <input
+              type="date"
+              name="moveDate"
+              required
+              value={formData.moveDate}
+              onChange={handleChange}
+              className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-2.5 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-1">
+          <label className="text-xs font-bold text-gray-300">Special Instructions / Items to Move (Optional)</label>
+          <textarea
+            name="notes"
+            value={formData.notes}
+            onChange={handleChange}
+            maxLength={2000}
+            placeholder="List fragile items, large furniture, or any special handling requirements..."
+            rows={2}
+            className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+          />
+        </div>
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-gold-gradient text-navy-900 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:brightness-105 active:scale-95 transition-all shadow-md cursor-pointer"
+        >
+          {loading ? "Booking Move..." : "Confirm Property Move"}
+          <ArrowRight className="w-4 h-4" />
+        </button>
+      </form>
+    </div>
+  );
+}
+
+// -------------------------------------------------------------
+// 6. HAULAGE SERVICES BOOKING FORM
+// -------------------------------------------------------------
+export function HaulageForm() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    pickupLocation: "",
+    deliveryLocation: "",
+    cargoType: "Bulk Cargo",
+    cargoWeight: "",
+    pickupDate: "",
+    notes: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      await fetch("https://formspree.io/f/mnjkkvgp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service_type: "Haulage Services",
+          ...formData
+        })
+      });
+
+      navigate(`/thank-you?service=haulage`, {
+        state: { name: formData.fullName, type: formData.cargoType }
+      });
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-xl border border-white/10">
+      <div className="mb-6">
+        <h2 className="text-xl font-extrabold text-white uppercase tracking-wide">
+          Book Haulage Service
+        </h2>
+        <p className="text-xs text-gray-400 font-semibold mt-1">
+          Reliable heavy-duty cargo and equipment haulage across all major Nigerian routes.
+        </p>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Your Full Name / Company Name</label>
+            <input
+              type="text"
+              name="fullName"
+              required
+              value={formData.fullName}
+              onChange={handleChange}
+              maxLength={100}
+              placeholder="John Doe or Business Name"
+              className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+            />
+          </div>
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Phone Number (WhatsApp Preferred)</label>
+            <input
+              type="tel"
+              name="phone"
+              required
+              maxLength={30}
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="+234 803 123 4567"
+              className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-1">
+          <label className="text-xs font-bold text-gray-300">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            required
+            maxLength={254}
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="john@example.com"
+            className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Pickup Location / Origin</label>
+            <div className="relative">
+              <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <input
+                type="text"
+                name="pickupLocation"
+                required
+                maxLength={200}
+                value={formData.pickupLocation}
+                onChange={handleChange}
+                placeholder="City, town or depot"
+                className="w-full bg-white/5 text-white text-xs font-semibold pl-10 pr-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+              />
+            </div>
+          </div>
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Delivery Location / Destination</label>
+            <div className="relative">
+              <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
+              <input
+                type="text"
+                name="deliveryLocation"
+                required
+                maxLength={200}
+                value={formData.deliveryLocation}
+                onChange={handleChange}
+                placeholder="Destination city or address"
+                className="w-full bg-white/5 text-white text-xs font-semibold pl-10 pr-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Cargo / Load Type</label>
+            <select
+              name="cargoType"
+              value={formData.cargoType}
+              onChange={handleChange}
+              className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+            >
+              <option value="Bulk Cargo">Bulk Cargo / Commodities</option>
+              <option value="Construction Materials">Construction Materials</option>
+              <option value="Heavy Equipment">Heavy Equipment / Machinery</option>
+              <option value="Container">Container Freight</option>
+              <option value="Other">Other Freight</option>
+            </select>
+          </div>
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Estimated Weight / Volume</label>
+            <select
+              name="cargoWeight"
+              value={formData.cargoWeight}
+              onChange={handleChange}
+              className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+            >
+              <option value="">Select weight</option>
+              <option value="Under 1 Ton">Under 1 Ton</option>
+              <option value="1 - 5 Tons">1 - 5 Tons</option>
+              <option value="5 - 15 Tons">5 - 15 Tons</option>
+              <option value="15 - 30 Tons">15 - 30 Tons</option>
+              <option value="Over 30 Tons">Over 30 Tons</option>
+            </select>
+          </div>
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-gray-300">Preferred Pickup Date</label>
+            <input
+              type="date"
+              name="pickupDate"
+              required
+              value={formData.pickupDate}
+              onChange={handleChange}
+              className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-2.5 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-1">
+          <label className="text-xs font-bold text-gray-300">Cargo Description / Special Requirements (Optional)</label>
+          <textarea
+            name="notes"
+            value={formData.notes}
+            onChange={handleChange}
+            maxLength={2000}
+            placeholder="Describe your cargo, hazardous material info, loading/unloading requirements..."
+            rows={2}
+            className="w-full bg-white/5 text-white text-xs font-semibold px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-gold-500"
+          />
+        </div>
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-gold-gradient text-navy-900 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:brightness-105 active:scale-95 transition-all shadow-md cursor-pointer"
+        >
+          {loading ? "Booking Haulage..." : "Confirm Haulage Booking"}
+          <ArrowRight className="w-4 h-4" />
+        </button>
+      </form>
+    </div>
+  );
+}

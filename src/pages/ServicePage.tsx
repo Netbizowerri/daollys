@@ -1108,6 +1108,23 @@ export default function ServicePage() {
                 ))}
               </ul>
 
+              {service.videoUrl && (
+                <div className="pt-4 border-t border-white/10">
+                  <h4 className="text-[10px] font-black text-gold-500 uppercase tracking-widest mb-3">
+                    Service Spotlight
+                  </h4>
+                  <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
+                    <iframe
+                      src={service.videoUrl.replace("shorts/", "embed/")}
+                      title={`${service.title} video`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+              )}
+
               <div className="pt-4 border-t border-white/10 text-center">
                 <Link
                   id={`srv-cta-${service.slug}`}

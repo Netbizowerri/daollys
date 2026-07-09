@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Calendar, ChevronDown, Globe, Package, Home, Truck, Car, Plane, Sparkles, ArrowRight } from "lucide-react";
+import { Menu, Calendar, ChevronDown, Globe, Package, Home, Truck, Car, Plane, Sparkles, ArrowRight, Warehouse } from "lucide-react";
 import MobileNavTray from "./MobileNavTray";
 
 export default function Header() {
@@ -186,6 +186,42 @@ export default function Header() {
                         </div>
                         <p className="text-[10px] text-gray-400 font-medium leading-relaxed">
                           Exclusive private jet hires, luxury helicopter shuttles, & VIP custom flights.
+                        </p>
+                      </div>
+                    </Link>
+
+                    {/* Item 5 */}
+                    <Link
+                      to="/services/property-movement"
+                      className="group/item flex gap-3 p-2.5 rounded-xl border border-transparent hover:border-gold-500/20 hover:bg-white/5 transition-all duration-200"
+                    >
+                      <div className="p-2 bg-white/5 border border-white/10 text-white rounded-lg shrink-0 group-hover/item:bg-[#D4A537] group-hover/item:text-navy-900 transition-colors">
+                        <Home className="w-4 h-4" />
+                      </div>
+                      <div className="space-y-0.5">
+                        <div className="text-xs font-bold text-white group-hover/item:text-[#D4A537] transition-colors uppercase tracking-wider">
+                          Property Movement
+                        </div>
+                        <p className="text-[10px] text-gray-400 font-medium leading-relaxed">
+                          Household & office relocation, heavy lifting, and asset transport logistics.
+                        </p>
+                      </div>
+                    </Link>
+
+                    {/* Item 6 */}
+                    <Link
+                      to="/services/haulage"
+                      className="group/item flex gap-3 p-2.5 rounded-xl border border-transparent hover:border-gold-500/20 hover:bg-white/5 transition-all duration-200"
+                    >
+                      <div className="p-2 bg-white/5 border border-white/10 text-white rounded-lg shrink-0 group-hover/item:bg-[#D4A537] group-hover/item:text-navy-900 transition-colors">
+                        <Truck className="w-4 h-4" />
+                      </div>
+                      <div className="space-y-0.5">
+                        <div className="text-xs font-bold text-white group-hover/item:text-[#D4A537] transition-colors uppercase tracking-wider">
+                          Haulage Services
+                        </div>
+                        <p className="text-[10px] text-gray-400 font-medium leading-relaxed">
+                          Bulk cargo, heavy equipment & construction material haulage across Nigeria.
                         </p>
                       </div>
                     </Link>

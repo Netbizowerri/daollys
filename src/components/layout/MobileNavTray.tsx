@@ -15,7 +15,8 @@ import {
   Car,
   Plane,
   ChevronRight,
-  Sparkles
+  Sparkles,
+  Building2
 } from "lucide-react";
 
 interface MobileNavTrayProps {
@@ -68,6 +69,20 @@ export default function MobileNavTray({ isOpen, onClose }: MobileNavTrayProps) {
       subtitle: "Fly in style, fly with class",
       path: "/services/private-jet-charter",
       icon: <Plane className="w-4 h-4" />
+    },
+    {
+      id: "property-movement",
+      title: "Property Movement",
+      subtitle: "Household & office relocation services",
+      path: "/services/property-movement",
+      icon: <Building2 className="w-4 h-4" />
+    },
+    {
+      id: "haulage",
+      title: "Haulage Services",
+      subtitle: "Bulk cargo & equipment haulage",
+      path: "/services/haulage",
+      icon: <Truck className="w-4 h-4" />
     }
   ];
 
