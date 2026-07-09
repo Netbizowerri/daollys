@@ -28,7 +28,7 @@ export default function Contact() {
 
     try {
       // Formspree action
-      await fetch("https://formspree.io/f/mqakpeoz", {
+      await fetch("https://formspree.io/f/maqggjpb", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -182,7 +182,7 @@ export function TravelsForm({ initialCountry = "Canada" }: { initialCountry?: st
 
     try {
       // 1. Submit to Formspree endpoint (Default placeholder to satisfy real integration constraint)
-      await fetch("https://formspree.io/f/mqakpeoz", {
+      await fetch("https://formspree.io/f/mnjkkvgp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -548,7 +548,7 @@ export function DeliveriesForm() {
     setLoading(true);
 
     try {
-      await fetch("https://formspree.io/f/mqakpeoz", {
+      await fetch("https://formspree.io/f/mnjkkvgp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -755,7 +755,7 @@ export function PrivateJetForm() {
     setLoading(true);
 
     try {
-      await fetch("https://formspree.io/f/mqakpeoz", {
+      await fetch("https://formspree.io/f/mnjkkvgp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -973,7 +973,7 @@ export function LuxuryCarForm() {
     setLoading(true);
 
     try {
-      await fetch("https://formspree.io/f/mqakpeoz", {
+      await fetch("https://formspree.io/f/mnjkkvgp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
