@@ -208,7 +208,7 @@ export default function Homepage() {
 
             {/* Responsive Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {TRAVEL_PACKAGES.slice(0, 4).map((pkg) => (
+              {TRAVEL_PACKAGES.map((pkg) => (
                 <div 
                   key={pkg.id} 
                   className="bg-[#0B1A4A]/70 border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-gold-500/30 transition-all duration-300 shadow-xl"
@@ -282,7 +282,7 @@ export default function Homepage() {
               {/* View More CTA — fills remaining columns (col-span-2 on xl) */}
               <Link
                 to="/services/travels"
-                className="col-span-full lg:col-span-1 xl:col-span-2 bg-gradient-to-br from-gold-500/10 to-gold-500/5 border-2 border-dashed border-gold-500/30 rounded-2xl flex flex-col items-center justify-center p-8 gap-3 group hover:border-gold-500/60 hover:from-gold-500/15 hover:to-gold-500/10 transition-all duration-300 min-h-[24rem]"
+                className="col-span-full md:col-span-2 lg:col-span-3 xl:col-span-2 bg-gradient-to-br from-gold-500/10 to-gold-500/5 border-2 border-dashed border-gold-500/30 rounded-2xl flex flex-col items-center justify-center p-8 gap-3 group hover:border-gold-500/60 hover:from-gold-500/15 hover:to-gold-500/10 transition-all duration-300 min-h-[24rem]"
               >
                 <div className="w-14 h-14 rounded-full bg-gold-gradient/20 border border-gold-500/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <span className="text-2xl">🌍</span>
