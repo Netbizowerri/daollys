@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+Disallow: /book/
+Disallow: /thank-you/
+
+# AI crawlers — explicitly allowed for AI search visibility
+User-agent: GPTBot
+Allow: /
+Disallow: /book/
+Disallow: /thank-you/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /book/
+Disallow: /thank-you/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /book/
+Disallow: /thank-you/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /book/
+Disallow: /thank-you/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /book/
+Disallow: /thank-you/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /book/
+Disallow: /thank-you/
+
+Sitemap: https://daollysintegrated.com/sitemap.xml

@@ -1,0 +1,8 @@
+{
+  "name": "Da Ollys Integrated Services",
+  "description": "Corporate & Booking website for Da Ollys Integrated Services Ltd - providing elite logistics, haulage, property relocation, luxury vehicle rentals, and global travel consulting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

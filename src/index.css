@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Brand Navy & Gold Colors */
+  --color-navy-900: #0C1B4D;
+  --color-navy-700: #152869;
+  --color-gold-500: #D4A537;
+  --color-gold-300: #E8C874;
+  --color-gold-gradient-from: #E8C874;
+  --color-gold-gradient-to: #B8871F;
+  --color-off-white: #F7F8FC;
+  --color-gray-700: #333333;
+  --color-gray-400: #8A8FA3;
+  
+  /* Custom border widths & rounded corners */
+  --radius-2xl: 1rem;
+}
+
+/* Custom CSS Helpers */
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  background-color: #0C1B4D;
+  color: #FFFFFF;
+}
+
+/* Beautiful custom selection highlight */
+::selection {
+  background-color: var(--color-gold-500);
+  color: #0C1B4D;
+}
+
+/* Gold text gradient helper */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #E8C874 0%, #D4A537 50%, #B8871F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold button gradient helper */
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #E8C874 0%, #D4A537 50%, #B8871F 100%);
+}
+
+/* Glassmorphism card helper - Light background version */
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glassmorphism card helper - Dark background version */
+.glass-dark {
+  background: rgba(12, 27, 77, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom scrollbar to keep layout premium */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C1B4D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4A537;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8871F;
+}
+
+/* Fade-in animation used on tab content in ServicePage */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.35s ease-out both;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
