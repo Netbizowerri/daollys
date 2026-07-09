@@ -112,7 +112,7 @@ export const SERVICES: ServiceDetail[] = [
     shortCopy: "Professional relocation services for homes and offices — heavy lifting, asset protection, and secure transport of your valuable property.",
     overviewCopy: "Moving your home or office shouldn't be a headache. Da Ollys Integrated Services provides end-to-end property movement solutions including careful packing, heavy lifting, furniture dismantling and reassembly, and secure transportation of all your assets. Our trained movers treat every item with the care it deserves, from fragile glassware to heavy office equipment.",
     imageTheme: "Professional movers packing and loading furniture into a moving truck",
-    imageUrl: "https://i.ibb.co/LfbB2rb/DA-OLLYS-13.jpg",
+    imageUrl: "https://i.ibb.co/v6c5GVZT/DA-OLLYS-12.jpg",
     videoUrl: "https://www.youtube.com/shorts/e0bX_wFk7Vg",
     whatsIncluded: [
       "Professional Packing & Fragile Item Wrapping",
@@ -138,7 +138,7 @@ export const SERVICES: ServiceDetail[] = [
     shortCopy: "Reliable heavy-duty haulage for bulk cargo, construction materials, and heavy equipment across Nigeria.",
     overviewCopy: "Da Ollys Integrated Services offers robust haulage and freight solutions for businesses requiring bulk cargo movement, heavy equipment transport, and construction material logistics. Our fleet of heavy-duty trucks and experienced operators ensures your goods arrive on time, every time, across all major routes in Nigeria.",
     imageTheme: "Heavy-duty haulage truck on highway / loading dock operations",
-    imageUrl: "https://i.ibb.co/v6c5GVZT/DA-OLLYS-12.jpg",
+    imageUrl: "https://i.ibb.co/LfbB2rb/DA-OLLYS-13.jpg",
     whatsIncluded: [
       "Bulk Cargo & Commodity Haulage Across Nigeria",
       "Heavy Equipment & Machinery Transport",
