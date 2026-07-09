@@ -1115,7 +1115,7 @@ export default function ServicePage() {
                   </h4>
                   <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
                     <iframe
-                      src={service.videoUrl.replace("shorts/", "embed/")}
+                      src={`https://www.youtube-nocookie.com/embed/${service.videoUrl!.split("/").pop()!.split("?")[0]}?rel=0&modestbranding=1`}
                       title={`${service.title} video`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
