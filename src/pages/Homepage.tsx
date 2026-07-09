@@ -116,7 +116,7 @@ export default function Homepage() {
               Who We Are
             </h2>
             <p className="text-lg md:text-2xl font-bold text-white leading-relaxed tracking-tight">
-              Da Ollys Logistics Services is a global logistics and travel company delivering value across four specialized services—from swift local dispatch to elite private jet charters and study abroad programs, combining absolute professionalism, reliability, and care.
+              Da Ollys Integrated Services Limited is a global logistics and travel company delivering value across four specialized services—from swift local dispatch to elite private jet charters and study abroad programs, combining absolute professionalism, reliability, and care.
             </p>
             <div className="w-16 h-1 bg-gold-500 mx-auto rounded-full mt-4" />
           </div>

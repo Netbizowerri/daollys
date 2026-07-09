@@ -27,7 +27,7 @@ export default function Footer() {
           </Link>
           
           <p className="text-xs text-gray-400 leading-relaxed font-medium">
-            Da Ollys Logistics Services is a global logistics and travel company delivering elite value across specialized channels—from swift local deliveries to exclusive visa study and work programs.
+            Da Ollys Integrated Services Limited is a global logistics and travel company delivering elite value across specialized channels—from swift local deliveries to exclusive visa study and work programs.
           </p>
 
           <div className="flex items-center gap-4">
