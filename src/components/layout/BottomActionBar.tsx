@@ -10,7 +10,6 @@ import {
   Package, 
   Truck, 
   Car, 
-  Plane,
   ChevronRight,
   Sparkles,
   Building2
@@ -37,46 +36,39 @@ export default function BottomActionBar() {
   const services = [
     {
       id: "travels",
-      title: "Travel Bookings",
-      subtitle: "Flights, Visas, Hotels, and customized holiday Tour Packages globally.",
+      title: "Travel Logistics",
+      subtitle: "Flight bookings, visa assistance, hotels, corporate travel & private jet arrangements.",
       path: "/services/travels",
       icon: <Globe className="w-5 h-5" />,
       badge: "Hot"
     },
     {
       id: "deliveries",
-      title: "Logistics & Dispatch",
-      subtitle: "Lightning-fast same-day parcel delivery courier services in Port Harcourt.",
+      title: "Local & International Delivery",
+      subtitle: "Door-to-door, nationwide courier, international shipping & customs clearance.",
       path: "/services/deliveries",
       icon: <Package className="w-5 h-5" />
     },
     {
-      id: "luxury-car-rentals",
-      title: "Luxury Car Rentals",
-      subtitle: "Premium chauffeur-driven rides, wedding fleets, and business trips.",
-      path: "/services/luxury-car-rentals",
-      icon: <Car className="w-5 h-5" />
-    },
-    {
-      id: "private-jet-charter",
-      title: "Private Jet & VIP Charter",
-      subtitle: "Exclusive private jet hire, helicopter transit, and premium VIP aviation.",
-      path: "/services/private-jet-charter",
-      icon: <Plane className="w-5 h-5" />
-    },
-    {
       id: "property-movement",
       title: "Property Movement",
-      subtitle: "Household & office relocation, heavy lifting, and asset transport.",
+      subtitle: "Residential & office relocation, interstate moves, packing and international relocation.",
       path: "/services/property-movement",
       icon: <Building2 className="w-5 h-5" />
     },
     {
       id: "haulage",
       title: "Haulage Services",
-      subtitle: "Bulk cargo, heavy equipment, and construction material haulage.",
+      subtitle: "Heavy-duty transport, industrial equipment, bulk cargo & container haulage.",
       path: "/services/haulage",
       icon: <Truck className="w-5 h-5" />
+    },
+    {
+      id: "luxury-rentals",
+      title: "Luxury Rentals",
+      subtitle: "Luxury vehicles, chauffeur services, wedding fleets & private jet charter.",
+      path: "/services/luxury-rentals",
+      icon: <Car className="w-5 h-5" />
     }
   ];
 

@@ -5,19 +5,19 @@ import {
   PropertyMovementForm, HaulageForm 
 } from "../components/forms/BookingForms";
 import PageTransition from "../components/shared/PageTransition";
-import { Globe, Send, Car, Plane, Truck, Home, Calendar, ArrowLeft } from "lucide-react";
+import { Globe, Send, Truck, Home, Calendar, ArrowLeft, Sparkles } from "lucide-react";
 
 export default function BookingPage() {
   const { serviceSlug } = useParams();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const preselectedCountry = searchParams.get("destination") || "Canada";
+  const subService = searchParams.get("sub");
 
   const switcherItems = [
     { slug: "travels", label: "Travels", icon: <Globe className="w-4 h-4" /> },
     { slug: "deliveries", label: "Deliveries", icon: <Send className="w-4 h-4" /> },
-    { slug: "luxury-car-rentals", label: "Luxury Cars", icon: <Car className="w-4 h-4" /> },
-    { slug: "private-jet-charter", label: "Private Jet", icon: <Plane className="w-4 h-4" /> },
+    { slug: "luxury-rentals", label: "Luxury Rentals", icon: <Sparkles className="w-4 h-4" /> },
     { slug: "property-movement", label: "Property Move", icon: <Home className="w-4 h-4" /> },
     { slug: "haulage", label: "Haulage", icon: <Truck className="w-4 h-4" /> }
   ];
@@ -29,10 +29,10 @@ export default function BookingPage() {
         return <TravelsForm initialCountry={preselectedCountry} />;
       case "deliveries":
         return <DeliveriesForm />;
-      case "luxury-car-rentals":
+      case "luxury-rentals":
+        if (subService === "private-jet-charter") return <PrivateJetForm />;
+        if (subService === "luxury-car-rentals") return <LuxuryCarForm />;
         return <LuxuryCarForm />;
-      case "private-jet-charter":
-        return <PrivateJetForm />;
       case "property-movement":
         return <PropertyMovementForm />;
       case "haulage":

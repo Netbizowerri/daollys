@@ -97,7 +97,7 @@ export default function LegalPage() {
             </h1>
           </div>
           
-          <p className="text-xs text-gray-400 font-semibold leading-relaxed italic">
+          <p className="text-sm md:text-lg text-gray-400 font-semibold leading-relaxed italic">
             {content.intro}
           </p>
         </div>
@@ -109,7 +109,7 @@ export default function LegalPage() {
               <h3 className="text-xs font-black text-white uppercase tracking-wider">
                 {sec.heading}
               </h3>
-              <p className="text-[11px] text-gray-400 font-bold leading-relaxed">
+              <p className="text-sm md:text-base text-gray-400 font-bold leading-relaxed">
                 {sec.body}
               </p>
             </div>
@@ -117,7 +117,7 @@ export default function LegalPage() {
         </div>
 
         {/* ================= HELPER NOTICE ================= */}
-        <div className="p-4 bg-gold-500/10 border border-gold-500/15 rounded-xl text-[10px] text-gray-300 font-bold">
+        <div className="p-4 bg-gold-500/10 border border-gold-500/15 rounded-xl text-sm md:text-base text-gray-300 font-bold">
           Note: This document acts as a verified template pending full corporate legal clearance. Final approved copies will be uploaded as supplied by the client.
         </div>
 

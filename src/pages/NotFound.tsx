@@ -12,7 +12,7 @@ export default function NotFound() {
         <h1 className="text-2xl font-black text-white uppercase tracking-tight">
           Page Not Located
         </h1>
-        <p className="text-xs text-gray-400 font-semibold leading-relaxed">
+        <p className="text-sm md:text-lg text-gray-400 font-semibold leading-relaxed">
           The requested page route does not exist in our corporate directory structure.
         </p>
         <Link to="/" className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white hover:bg-white/10 font-bold px-6 py-2.5 rounded-full text-xs uppercase tracking-wider transition-all cursor-pointer">

@@ -13,7 +13,6 @@ import {
   Package,
   Truck,
   Car,
-  Plane,
   ChevronRight,
   Sparkles,
   Building2
@@ -43,46 +42,39 @@ export default function MobileNavTray({ isOpen, onClose }: MobileNavTrayProps) {
   const services = [
     {
       id: "travels",
-      title: "Travel Bookings",
-      subtitle: "Flights, Visas, Hotels & Tours",
+      title: "Travel Logistics",
+      subtitle: "Flights, visas, hotels & corporate travel",
       path: "/services/travels",
       icon: <Globe className="w-4 h-4" />,
       badge: "Hot"
     },
     {
       id: "deliveries",
-      title: "Dispatch Logistics",
-      subtitle: "Same-day Port Harcourt courier",
+      title: "Local & International Delivery",
+      subtitle: "Door-to-door, nationwide & global shipping",
       path: "/services/deliveries",
       icon: <Package className="w-4 h-4" />
     },
     {
-      id: "luxury-car-rentals",
-      title: "Luxury Car Rentals",
-      subtitle: "Weddings, trips & VIP chauffeurs",
-      path: "/services/luxury-car-rentals",
-      icon: <Car className="w-4 h-4" />
-    },
-    {
-      id: "private-jet-charter",
-      title: "Private Jet Charters",
-      subtitle: "Fly in style, fly with class",
-      path: "/services/private-jet-charter",
-      icon: <Plane className="w-4 h-4" />
-    },
-    {
       id: "property-movement",
       title: "Property Movement",
-      subtitle: "Household & office relocation services",
+      subtitle: "Residential & office relocation services",
       path: "/services/property-movement",
       icon: <Building2 className="w-4 h-4" />
     },
     {
       id: "haulage",
       title: "Haulage Services",
-      subtitle: "Bulk cargo & equipment haulage",
+      subtitle: "Heavy-duty transport & bulk cargo",
       path: "/services/haulage",
       icon: <Truck className="w-4 h-4" />
+    },
+    {
+      id: "luxury-rentals",
+      title: "Luxury Rentals",
+      subtitle: "Vehicles, chauffeur & jet charters",
+      path: "/services/luxury-rentals",
+      icon: <Car className="w-4 h-4" />
     }
   ];
 

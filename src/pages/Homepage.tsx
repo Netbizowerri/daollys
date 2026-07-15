@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { 
   Globe, Send, Truck, Package, Car, Plane,
   Shield, CheckCircle, Zap, MessageCircle, 
-  ArrowRight, Phone, Instagram, Facebook, Share2, Star
+  ArrowRight, Phone, Instagram, Facebook, Share2, Star,
+  Sparkles, Building2, Users, Heart, Award
 } from "lucide-react";
 import { SERVICES, TRAVEL_PACKAGES } from "../data/services";
 import GlassCard from "../components/shared/GlassCard";
@@ -20,11 +21,29 @@ export default function Homepage() {
       case "Container": return <Package className="w-6 h-6" />;
       case "Car": return <Car className="w-6 h-6" />;
       case "Plane": return <Plane className="w-6 h-6" />;
+      case "Sparkles": return <Sparkles className="w-6 h-6" />;
       default: return <Package className="w-6 h-6" />;
     }
   };
 
   const whatsappUrl = "https://wa.me/2348146497746?text=Hello%20Da%20Ollys%20Integrated%20Services%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.";
+
+  const whyChoose = [
+    { icon: <Users className="w-6 h-6" />, title: "Professional & Experienced Team", desc: "Our team combines industry expertise with modern technology to deliver world-class logistics and travel solutions." },
+    { icon: <Zap className="w-6 h-6" />, title: "Reliable & Timely Delivery", desc: "We are committed to reliable and timely service delivery, ensuring every shipment and booking is executed on schedule." },
+    { icon: <Award className="w-6 h-6" />, title: "Competitive Pricing", desc: "We offer competitive pricing without compromising on quality, providing cost-effective solutions across all our service verticals." },
+    { icon: <Shield className="w-6 h-6" />, title: "Secure Logistics Solutions", desc: "Every item is handled with strict safety protocols, secure packing, and careful transport to guarantee complete peace of mind." },
+    { icon: <Heart className="w-6 h-6" />, title: "Customer-Focused Approach", desc: "Every client is treated as a valued partner, with proactive desk updates, transparent communication, and personalized attention." },
+    { icon: <Globe className="w-6 h-6" />, title: "Nationwide & International Reach", desc: "With nationwide operational coverage and an international logistics network, we connect you anywhere in Nigeria and the world." }
+  ];
+
+  const industries = [
+    "Corporate Organizations", "Government Agencies", "Oil and Gas Companies",
+    "Construction Companies", "Manufacturing Industries", "Small and Medium Enterprises (SMEs)",
+    "Financial Institutions", "Educational Institutions", "Healthcare Organizations",
+    "Hospitality Industry", "Retail Businesses", "Religious Organizations",
+    "Individuals and Families"
+  ];
 
   return (
     <PageTransition>
@@ -59,7 +78,7 @@ export default function Homepage() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest text-gold-500"
             >
-              <SparklesIcon className="w-3.5 h-3.5 animate-spin" />
+              <SparklesIcon className="w-3.5 h-3.5" />
               Da Ollys Integrated Services Ltd
             </motion.div>
 
@@ -70,8 +89,8 @@ export default function Homepage() {
               transition={{ delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight max-w-4xl"
             >
-              Your Global Logistics & <br className="hidden md:block"/>
-              <span className="text-gold-gradient font-black">Travel Partner</span>
+              Your Trusted Logistics & <br className="hidden md:block"/>
+              <span className="text-gold-gradient font-black">Mobility Partner</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -81,7 +100,7 @@ export default function Homepage() {
               transition={{ delay: 0.2 }}
               className="text-sm md:text-lg text-gray-300 font-medium max-w-2xl leading-relaxed"
             >
-              Safe, Swift, and Professional Delivery & Travel Services You Can Trust. Anchored in Port Harcourt, serving clients across the globe.
+              Delivering world-class logistics, transportation, travel, and mobility solutions to individuals, businesses, and organizations across Nigeria and around the world.
             </motion.p>
 
             {/* CTA Group */}
@@ -116,7 +135,7 @@ export default function Homepage() {
               Who We Are
             </h2>
             <p className="text-lg md:text-2xl font-bold text-white leading-relaxed tracking-tight">
-              Da Ollys Integrated Services Limited is a global logistics and travel company delivering value across four specialized services—from swift local dispatch to elite private jet charters and study abroad programs, combining absolute professionalism, reliability, and care.
+              Da Ollys Integrated Services Limited is a dynamic Nigerian-owned logistics and integrated service company committed to delivering world-class logistics, transportation, travel, and mobility solutions — simplifying the movement of people, goods, and assets across Nigeria and around the world.
             </p>
             <div className="w-16 h-1 bg-gold-500 mx-auto rounded-full mt-4" />
           </div>
@@ -132,8 +151,8 @@ export default function Homepage() {
               <p className="text-3xl font-black text-white tracking-tight">
                 Our Core Service Portfolios
               </p>
-              <p className="text-xs text-gray-400 font-semibold max-w-xl mx-auto leading-relaxed">
-                Experience high-performance operations tailored meticulously to your international travels, swift dispatch logistics, luxury car rentals, and elite private jet charters.
+              <p className="text-sm md:text-lg text-gray-400 font-semibold max-w-xl mx-auto leading-relaxed">
+                Comprehensive logistics, travel, transportation, and mobility solutions — from international travel and door-to-door deliveries to luxury rentals and heavy-duty haulage.
               </p>
             </div>
 
@@ -168,7 +187,7 @@ export default function Homepage() {
                       <h3 className="text-base font-extrabold text-white tracking-tight mt-2">
                         {srv.subtitle}
                       </h3>
-                      <p className="text-xs font-medium text-gray-300 leading-relaxed">
+                      <p className="text-sm md:text-base font-medium text-gray-300 leading-relaxed">
                         {srv.shortCopy}
                       </p>
                     </div>
@@ -199,9 +218,9 @@ export default function Homepage() {
                 Elite Travel Opportunities
               </span>
               <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
-                Our Updated Visa & Relocation Packages
+                Our Visa & Relocation Packages
               </h2>
-              <p className="text-xs text-gray-400 font-semibold max-w-2xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-lg text-gray-400 font-semibold max-w-2xl mx-auto leading-relaxed">
                 Expert document compilation, secure tuition deposit processing, and strategic filing support for high-success-rate international pathways.
               </p>
             </div>
@@ -255,7 +274,7 @@ export default function Homepage() {
                       <h3 className="text-sm font-black text-white tracking-tight leading-snug group-hover:text-gold-300 transition-colors">
                         {pkg.title}
                       </h3>
-                      <p className="text-[11px] text-gray-300 font-medium leading-relaxed line-clamp-3">
+                      <p className="text-sm md:text-base text-gray-300 font-medium leading-relaxed line-clamp-3">
                         {pkg.subtitle}
                       </p>
                     </div>
@@ -290,7 +309,7 @@ export default function Homepage() {
                 <h3 className="text-lg font-black text-white text-center">
                   View More Visa <br />& Travel Packages
                 </h3>
-                <p className="text-[11px] text-gray-400 font-medium text-center max-w-xs">
+                <p className="text-sm md:text-base text-gray-400 font-medium text-center max-w-xs">
                   Explore all 6 elite visa and relocation packages including Canada, Qatar, Oman, Germany, Georgia & Serbia
                 </p>
                 <span className="mt-2 inline-flex items-center gap-2 px-6 py-2.5 bg-gold-gradient text-navy-900 font-black text-[11px] uppercase tracking-wider rounded-xl group-hover:brightness-105 transition-all">
@@ -307,55 +326,70 @@ export default function Homepage() {
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center space-y-3">
               <h2 className="text-xs font-bold text-gold-500 uppercase tracking-widest">
-                Our Guarantee
+                Why Choose Us
               </h2>
               <p className="text-3xl font-black text-white tracking-tight">
-                Why Professional Clients Trust Da Ollys
+                Why Da Ollys Integrated Services Limited?
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-6 bg-white/5 rounded-2xl border border-white/10 space-y-4">
-                <div className="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center text-gold-500">
-                  <Zap className="w-6 h-6" />
+              {whyChoose.map((item, idx) => (
+                <div key={idx} className="p-6 bg-white/5 rounded-2xl border border-white/10 space-y-4 hover:border-gold-500/20 transition-all">
+                  <div className="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center text-gold-500">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-sm font-bold text-white uppercase tracking-wider">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm md:text-lg text-gray-400 leading-relaxed font-semibold">
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 className="text-sm font-bold text-white uppercase tracking-wider">
-                  Swift Local Deliveries
-                </h3>
-                <p className="text-xs text-gray-400 leading-relaxed font-semibold">
-                  We deploy specialized logistics bikes and vans custom-tailored to bypass Port Harcourt traffic, ensuring prompt arrival and secure handovers.
-                </p>
-              </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <div className="p-6 bg-white/5 rounded-2xl border border-white/10 space-y-4">
-                <div className="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center text-gold-500">
-                  <Globe className="w-6 h-6" />
-                </div>
-                <h3 className="text-sm font-bold text-white uppercase tracking-wider">
-                  Global Reach & Service
-                </h3>
-                <p className="text-xs text-gray-400 leading-relaxed font-semibold">
-                  From international cargo freight channels to certified student admission programs, we secure seamless, expert borders transition solutions.
-                </p>
-              </div>
+        {/* ================= INDUSTRIES WE SERVE ================= */}
+        <section id="industries-section" className="bg-[#0B1A4A] py-20 px-6 border-y border-white/5">
+          <div className="max-w-7xl mx-auto space-y-10">
+            <div className="text-center space-y-3">
+              <h2 className="text-xs font-bold text-gold-500 uppercase tracking-widest">
+                Industries We Serve
+              </h2>
+              <p className="text-3xl font-black text-white tracking-tight">
+                Trusted Across Sectors
+              </p>
+              <p className="text-sm md:text-lg text-gray-400 font-semibold max-w-xl mx-auto leading-relaxed">
+                We provide integrated logistics and mobility solutions to a diverse range of industries across Nigeria and internationally.
+              </p>
+            </div>
 
-              <div className="p-6 bg-white/5 rounded-2xl border border-white/10 space-y-4">
-                <div className="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center text-gold-500">
-                  <Shield className="w-6 h-6" />
+            <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+              {industries.map((industry, idx) => (
+                <div
+                  key={idx}
+                  className="px-5 py-3 bg-[#0C1B4D]/80 rounded-xl border border-white/10 text-sm md:text-base font-semibold text-gray-300 hover:border-gold-500/30 hover:text-gold-500 transition-all"
+                >
+                  {industry}
                 </div>
-                <h3 className="text-sm font-bold text-white uppercase tracking-wider">
-                  Secure & Reliable
-                </h3>
-                <p className="text-xs text-gray-400 leading-relaxed font-semibold">
-                  We operate with strict transit logs, high-density secure packing, protective wrapping, and background-checked, security-certified handlers.
-                </p>
-              </div>
+              ))}
+            </div>
+
+            <div className="text-center pt-4">
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider border border-white/10 transition-all"
+              >
+                Learn More About Us <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </div>
         </section>
 
         {/* ================= TESTIMONIALS SECTION (EMPTY STATE) ================= */}
-        <section id="testimonials-section" className="bg-[#0B1A4A] py-16 px-6 border-y border-white/5">
+        <section id="testimonials-section" className="bg-navy-900 py-16 px-6 border-b border-white/5">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-3">
               <h2 className="text-xs font-bold text-gold-500 uppercase tracking-widest">
@@ -373,7 +407,7 @@ export default function Homepage() {
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
-              <p className="text-xs text-gray-300 italic font-semibold leading-relaxed">
+              <p className="text-sm md:text-lg text-gray-300 italic font-semibold leading-relaxed">
                 "Our client reviews portfolio is currently being consolidated. Once verified, real testimonials from our logistics, heavy haulage, property movement, and immigration clients will be displayed here."
               </p>
               <div className="mt-2 text-center">
@@ -389,7 +423,7 @@ export default function Homepage() {
         </section>
 
         {/* ================= WHATSAPP + SOCIAL CTA BAND ================= */}
-        <section id="cta-band" className="bg-navy-900 text-white py-16 px-6 text-center relative overflow-hidden">
+        <section id="cta-band" className="bg-[#0C1B4D] text-white py-16 px-6 text-center relative overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-10">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500 rounded-full blur-3xl" />
           </div>
@@ -398,8 +432,8 @@ export default function Homepage() {
             <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
               Have an Instant Question? Chat Directly With Our Desk
             </h2>
-            <p className="text-xs text-gray-300 font-semibold max-w-md mx-auto leading-relaxed">
-              Our team operates a dedicated WhatsApp desk to guide you with instant delivery rates, haulage clearances, and active study visas inquiries.
+            <p className="text-sm md:text-lg text-gray-300 font-semibold max-w-md mx-auto leading-relaxed">
+              Our team operates a dedicated WhatsApp desk to guide you with delivery rates, haulage clearances, travel bookings, and any inquiries you may have.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

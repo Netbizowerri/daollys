@@ -221,7 +221,7 @@ export function TravelsForm({ initialCountry = "Canada" }: { initialCountry?: st
         <h2 className="text-xl font-extrabold text-white uppercase tracking-wide">
           Visa & Travel Consultation Form
         </h2>
-        <p className="text-xs text-gray-400 font-semibold mt-1">
+        <p className="text-sm md:text-lg text-gray-400 font-semibold mt-1">
           Begin your international travel or study package application.
         </p>
       </div>
@@ -367,7 +367,7 @@ export function TravelsForm({ initialCountry = "Canada" }: { initialCountry?: st
             </div>
 
             {formData.destination === "Canada" && (
-              <div className="p-3.5 bg-gold-500/10 border border-gold-500/20 rounded-xl text-[10px] md:text-xs font-semibold text-gray-300 leading-relaxed flex items-start gap-2">
+              <div className="p-3.5 bg-gold-500/10 border border-gold-500/20 rounded-xl text-sm md:text-base font-semibold text-gray-300 leading-relaxed flex items-start gap-2">
                 <Sparkles className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold">Canada Study & Work Guarantee Package:</span> Requires proof of funds (min $40,000 CAD), expert application preparation, and secure tuition deposit. Approximately 6 weeks visa processing time.
@@ -376,7 +376,7 @@ export function TravelsForm({ initialCountry = "Canada" }: { initialCountry?: st
             )}
 
             {formData.destination === "Qatar" && (
-              <div className="p-3.5 bg-gold-500/10 border border-gold-500/20 rounded-xl text-[10px] md:text-xs font-semibold text-gray-300 leading-relaxed flex items-start gap-2">
+              <div className="p-3.5 bg-gold-500/10 border border-gold-500/20 rounded-xl text-sm md:text-base font-semibold text-gray-300 leading-relaxed flex items-start gap-2">
                 <Sparkles className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold">Qatar Trip Promo Package:</span> Includes visa processing and hotel accommodation for two travelers. Quick 7-day turnaround time.
@@ -385,7 +385,7 @@ export function TravelsForm({ initialCountry = "Canada" }: { initialCountry?: st
             )}
 
             {formData.destination === "Germany" && (
-              <div className="p-3.5 bg-gold-500/10 border border-gold-500/20 rounded-xl text-[10px] md:text-xs font-semibold text-gray-300 leading-relaxed flex items-start gap-2">
+              <div className="p-3.5 bg-gold-500/10 border border-gold-500/20 rounded-xl text-sm md:text-base font-semibold text-gray-300 leading-relaxed flex items-start gap-2">
                 <Sparkles className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold">Germany Work Visa Program (5-month process):</span> Job opportunities include Warehouse, Factory Worker, Secretary positions with official employment letter support. Requires passport data page, CV, and credentials.
@@ -394,7 +394,7 @@ export function TravelsForm({ initialCountry = "Canada" }: { initialCountry?: st
             )}
 
             {formData.destination === "Serbia" && (
-              <div className="p-3.5 bg-gold-500/10 border border-gold-500/20 rounded-xl text-[10px] md:text-xs font-semibold text-gray-300 leading-relaxed flex items-start gap-2">
+              <div className="p-3.5 bg-gold-500/10 border border-gold-500/20 rounded-xl text-sm md:text-base font-semibold text-gray-300 leading-relaxed flex items-start gap-2">
                 <Sparkles className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold">Serbia Work Visa Program (2-3 month processing):</span> Warehouse Worker positions for ages 18-55. Includes accommodation and salary. Fast transition to 1-year residency.
@@ -457,8 +457,8 @@ export function TravelsForm({ initialCountry = "Canada" }: { initialCountry?: st
                 </div>
                 
                 <div>
-                  <p className="text-xs font-bold text-white">Drag & drop files here, or click to select</p>
-                  <p className="text-[10px] text-gray-400 font-semibold mt-0.5"> PDF, JPG, PNG up to 10MB per file</p>
+                  <p className="text-sm md:text-lg font-bold text-white">Drag & drop files here, or click to select</p>
+                  <p className="text-sm md:text-base text-gray-400 font-semibold mt-0.5"> PDF, JPG, PNG up to 10MB per file</p>
                 </div>
               </div>
 
@@ -500,7 +500,7 @@ export function TravelsForm({ initialCountry = "Canada" }: { initialCountry?: st
               />
             </div>
 
-            <div className="p-3 bg-emerald-500/5 border border-emerald-500/10 rounded-xl text-[10px] text-emerald-400 font-bold flex items-center gap-2">
+            <div className="p-3 bg-emerald-500/5 border border-emerald-500/10 rounded-xl text-sm md:text-base text-emerald-400 font-bold flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-emerald-500 shrink-0" />
               Your documents and private data are transmitted securely.
             </div>
@@ -573,7 +573,7 @@ export function DeliveriesForm() {
         <h2 className="text-xl font-extrabold text-white uppercase tracking-wide">
           Book a Parcel Dispatch
         </h2>
-        <p className="text-xs text-gray-400 font-semibold mt-1">
+        <p className="text-sm md:text-lg text-gray-400 font-semibold mt-1">
           Secure, lightning-fast dispatch via bikes, vans, or cross-border airfreight.
         </p>
       </div>
@@ -764,7 +764,7 @@ export function PrivateJetForm() {
         })
       });
 
-      navigate(`/thank-you?service=private-jet-charter`, {
+      navigate(`/thank-you?service=luxury-rentals&type=private-jet-charter`, {
         state: { name: formData.fullName, jet: formData.aircraftCategory }
       });
     } catch (err) {
@@ -780,7 +780,7 @@ export function PrivateJetForm() {
         <h2 className="text-xl font-extrabold text-white uppercase tracking-wide">
           Request Private Jet & VIP Charter Quote
         </h2>
-        <p className="text-xs text-gray-400 font-semibold mt-1">
+        <p className="text-sm md:text-lg text-gray-400 font-semibold mt-1">
           Fly in supreme comfort and complete privacy, scheduled entirely on your own terms.
         </p>
       </div>
@@ -929,7 +929,7 @@ export function PrivateJetForm() {
           />
         </div>
 
-        <div className="p-3 bg-gold-500/10 border border-gold-500/15 rounded-xl text-[10px] md:text-xs text-gray-300 font-bold flex items-center gap-2">
+        <div className="p-3 bg-gold-500/10 border border-gold-500/15 rounded-xl text-sm md:text-base text-gray-300 font-bold flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-gold-500 shrink-0" />
           All private charter schedules are secure, highly confidential, and fully customized.
         </div>
@@ -982,7 +982,7 @@ export function LuxuryCarForm() {
         })
       });
 
-      navigate(`/thank-you?service=luxury-car-rentals`, {
+      navigate(`/thank-you?service=luxury-rentals&type=luxury-car-rentals`, {
         state: { name: formData.fullName, car: formData.vehicleType }
       });
     } catch (err) {
@@ -998,7 +998,7 @@ export function LuxuryCarForm() {
         <h2 className="text-xl font-extrabold text-white uppercase tracking-wide">
           Reserve a Premium Ride
         </h2>
-        <p className="text-xs text-gray-400 font-semibold mt-1">
+        <p className="text-sm md:text-lg text-gray-400 font-semibold mt-1">
           Ride in absolute class with professional security-certified personal drivers.
         </p>
       </div>
@@ -1122,7 +1122,7 @@ export function LuxuryCarForm() {
           />
         </div>
 
-        <div className="p-3 bg-gold-500/10 border border-gold-500/15 rounded-xl text-[10px] md:text-xs text-gray-300 font-bold flex items-center gap-2">
+        <div className="p-3 bg-gold-500/10 border border-gold-500/15 rounded-xl text-sm md:text-base text-gray-300 font-bold flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-gold-500 shrink-0" />
           All luxury rentals come standard with certified, highly polite chauffeurs.
         </div>
@@ -1191,7 +1191,7 @@ export function PropertyMovementForm() {
         <h2 className="text-xl font-extrabold text-white uppercase tracking-wide">
           Book Property Movement
         </h2>
-        <p className="text-xs text-gray-400 font-semibold mt-1">
+        <p className="text-sm md:text-lg text-gray-400 font-semibold mt-1">
           Professional household & office relocation with careful handling and secure transport.
         </p>
       </div>

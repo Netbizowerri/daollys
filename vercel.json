@@ -13,7 +13,7 @@
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), fullscreen=(self)" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self' https://i.ibb.co https://formspree.io https://www.privyr.com https://wa.me https://img.icons8.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://i.ibb.co data:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io https://www.privyr.com;" }
+        { "key": "Content-Security-Policy", "value": "default-src 'self' https://i.ibb.co https://formspree.io https://www.privyr.com https://wa.me https://img.icons8.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://i.ibb.co data:; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io https://www.privyr.com;" }
       ]
     }
   ]

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Calendar, ChevronDown, Globe, Package, Home, Truck, Car, Plane, Sparkles, ArrowRight, Warehouse } from "lucide-react";
+import { Menu, Calendar, ChevronDown, Globe, Package, Home, Truck, Car, Sparkles, ArrowRight } from "lucide-react";
 import MobileNavTray from "./MobileNavTray";
 
 export default function Header() {
@@ -115,7 +115,7 @@ export default function Header() {
                   </div>
                   
                   <div className="grid grid-cols-2 gap-4">
-                    {/* Item 1 */}
+                    {/* Item 1 — Travels */}
                     <Link
                       to="/services/travels"
                       className="group/item flex gap-3 p-2.5 rounded-xl border border-transparent hover:border-gold-500/20 hover:bg-white/5 transition-all duration-200"
@@ -125,18 +125,18 @@ export default function Header() {
                       </div>
                       <div className="space-y-0.5">
                         <div className="text-xs font-bold text-white group-hover/item:text-[#D4A537] transition-colors uppercase tracking-wider flex items-center gap-1.5">
-                          Travel Bookings
+                          Travel Logistics
                           <span className="text-[8px] bg-gold-500/20 text-gold-400 font-extrabold px-1.5 py-0.5 rounded-md uppercase tracking-wide">
                             Hot
                           </span>
                         </div>
                         <p className="text-[10px] text-gray-400 font-medium leading-relaxed">
-                          Flights, trusted visa consulting, hotels, and customized holiday tour packages.
+                          Flight bookings, visa assistance, hotels, corporate travel, and private jet arrangements.
                         </p>
                       </div>
                     </Link>
 
-                    {/* Item 2 */}
+                    {/* Item 2 — Deliveries */}
                     <Link
                       to="/services/deliveries"
                       className="group/item flex gap-3 p-2.5 rounded-xl border border-transparent hover:border-gold-500/20 hover:bg-white/5 transition-all duration-200"
@@ -146,51 +146,15 @@ export default function Header() {
                       </div>
                       <div className="space-y-0.5">
                         <div className="text-xs font-bold text-white group-hover/item:text-[#D4A537] transition-colors uppercase tracking-wider">
-                          Dispatch Logistics
+                          Local & International Delivery
                         </div>
                         <p className="text-[10px] text-gray-400 font-medium leading-relaxed">
-                          Rapid same-day parcel courier and business deliveries in Port Harcourt metro.
+                          Door-to-door deliveries, nationwide courier, international shipping & customs clearance.
                         </p>
                       </div>
                     </Link>
 
-                    {/* Item 3 */}
-                    <Link
-                      to="/services/luxury-car-rentals"
-                      className="group/item flex gap-3 p-2.5 rounded-xl border border-transparent hover:border-gold-500/20 hover:bg-white/5 transition-all duration-200"
-                    >
-                      <div className="p-2 bg-white/5 border border-white/10 text-white rounded-lg shrink-0 group-hover/item:bg-[#D4A537] group-hover/item:text-navy-900 transition-colors">
-                        <Car className="w-4 h-4" />
-                      </div>
-                      <div className="space-y-0.5">
-                        <div className="text-xs font-bold text-white group-hover/item:text-[#D4A537] transition-colors uppercase tracking-wider">
-                          Luxury Car Rentals
-                        </div>
-                        <p className="text-[10px] text-gray-400 font-medium leading-relaxed">
-                          Premium VIP chauffeured security escorts, event protocols, & luxury wedding fleets.
-                        </p>
-                      </div>
-                    </Link>
-
-                    {/* Item 4 */}
-                    <Link
-                      to="/services/private-jet-charter"
-                      className="group/item flex gap-3 p-2.5 rounded-xl border border-transparent hover:border-gold-500/20 hover:bg-white/5 transition-all duration-200"
-                    >
-                      <div className="p-2 bg-white/5 border border-white/10 text-white rounded-lg shrink-0 group-hover/item:bg-[#D4A537] group-hover/item:text-navy-900 transition-colors">
-                        <Plane className="w-4 h-4" />
-                      </div>
-                      <div className="space-y-0.5">
-                        <div className="text-xs font-bold text-white group-hover/item:text-[#D4A537] transition-colors uppercase tracking-wider">
-                          Private Jet Charters
-                        </div>
-                        <p className="text-[10px] text-gray-400 font-medium leading-relaxed">
-                          Exclusive private jet hires, luxury helicopter shuttles, & VIP custom flights.
-                        </p>
-                      </div>
-                    </Link>
-
-                    {/* Item 5 */}
+                    {/* Item 3 — Property Movement */}
                     <Link
                       to="/services/property-movement"
                       className="group/item flex gap-3 p-2.5 rounded-xl border border-transparent hover:border-gold-500/20 hover:bg-white/5 transition-all duration-200"
@@ -203,12 +167,12 @@ export default function Header() {
                           Property Movement
                         </div>
                         <p className="text-[10px] text-gray-400 font-medium leading-relaxed">
-                          Household & office relocation, heavy lifting, and asset transport logistics.
+                          Residential & office relocation, interstate moves, packing, and international relocation support.
                         </p>
                       </div>
                     </Link>
 
-                    {/* Item 6 */}
+                    {/* Item 4 — Haulage */}
                     <Link
                       to="/services/haulage"
                       className="group/item flex gap-3 p-2.5 rounded-xl border border-transparent hover:border-gold-500/20 hover:bg-white/5 transition-all duration-200"
@@ -221,7 +185,25 @@ export default function Header() {
                           Haulage Services
                         </div>
                         <p className="text-[10px] text-gray-400 font-medium leading-relaxed">
-                          Bulk cargo, heavy equipment & construction material haulage across Nigeria.
+                          Heavy-duty transport, industrial equipment, bulk cargo, and container haulage across Nigeria.
+                        </p>
+                      </div>
+                    </Link>
+
+                    {/* Item 5 — Luxury Rentals */}
+                    <Link
+                      to="/services/luxury-rentals"
+                      className="group/item flex gap-3 p-2.5 rounded-xl border border-transparent hover:border-gold-500/20 hover:bg-white/5 transition-all duration-200"
+                    >
+                      <div className="p-2 bg-white/5 border border-white/10 text-white rounded-lg shrink-0 group-hover/item:bg-[#D4A537] group-hover/item:text-navy-900 transition-colors">
+                        <Car className="w-4 h-4" />
+                      </div>
+                      <div className="space-y-0.5">
+                        <div className="text-xs font-bold text-white group-hover/item:text-[#D4A537] transition-colors uppercase tracking-wider">
+                          Luxury Rentals
+                        </div>
+                        <p className="text-[10px] text-gray-400 font-medium leading-relaxed">
+                          Luxury vehicles, chauffeur services, wedding fleets, and private jet charter coordination.
                         </p>
                       </div>
                     </Link>

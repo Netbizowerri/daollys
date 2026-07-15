@@ -27,7 +27,7 @@ export default function Footer() {
           </Link>
           
           <p className="text-xs text-gray-400 leading-relaxed font-medium">
-            Da Ollys Integrated Services Limited is a global logistics and travel company delivering elite value across specialized channels—from swift local deliveries to exclusive visa study and work programs.
+            Da Ollys Integrated Services Limited is a dynamic Nigerian-owned logistics and integrated service company committed to delivering world-class logistics, transportation, travel, and mobility solutions across Nigeria and around the world.
           </p>
 
           <div className="flex items-center gap-4">
@@ -74,16 +74,19 @@ export default function Footer() {
           </h3>
           <ul className="flex flex-col gap-3 text-xs font-semibold text-gray-400">
             <li>
-              <Link to="/services/travels" className="hover:text-gold-300 transition-colors">International & Local Travel Bookings</Link>
+              <Link to="/services/travels" className="hover:text-gold-300 transition-colors">Travel Logistics</Link>
             </li>
             <li>
-              <Link to="/services/deliveries" className="hover:text-gold-300 transition-colors">Reliable Logistics & Dispatch Service</Link>
+              <Link to="/services/deliveries" className="hover:text-gold-300 transition-colors">Local & International Delivery</Link>
             </li>
             <li>
-              <Link to="/services/luxury-car-rentals" className="hover:text-gold-300 transition-colors">Luxury Car Rentals</Link>
+              <Link to="/services/property-movement" className="hover:text-gold-300 transition-colors">Property Movement & Relocation</Link>
             </li>
             <li>
-              <Link to="/services/private-jet-charter" className="hover:text-gold-300 transition-colors">Private Jet & VIP Charter Services</Link>
+              <Link to="/services/haulage" className="hover:text-gold-300 transition-colors">Haulage Services</Link>
+            </li>
+            <li>
+              <Link to="/services/luxury-rentals" className="hover:text-gold-300 transition-colors">Luxury Rentals</Link>
             </li>
           </ul>
         </div>

@@ -43,7 +43,15 @@ export default function ThankYou() {
           title: `Heavy Haulage Quote Requested, ${name}!`,
           desc: `Our logistics manager is calculating distance, customs, and escort parameters for your ${truck} payload.`
         };
-      case "luxury-car-rentals":
+      case "luxury-rentals":
+        const subType = searchParams.get("type") || "";
+        if (subType === "private-jet-charter") {
+          const jet = routeState.jet || "Aircraft";
+          return {
+            title: `Jet Charter Request Logged, ${name}!`,
+            desc: `We have received your inquiry for the ${jet}. Our flight logistics team will reach out with matched private jet options and a curated quote.`
+          };
+        }
         const car = routeState.car || "Luxury Ride";
         return {
           title: `Fleet Reservation Pending, ${name}!`,
@@ -72,7 +80,7 @@ export default function ThankYou() {
           <h1 className="text-2xl md:text-3xl font-extrabold text-white uppercase tracking-tight">
             {content.title}
           </h1>
-          <p className="text-xs text-gray-400 font-semibold leading-relaxed max-w-lg mx-auto">
+          <p className="text-sm md:text-lg text-gray-400 font-semibold leading-relaxed max-w-lg mx-auto">
             {content.desc}
           </p>
         </div>
@@ -113,14 +121,14 @@ export default function ThankYou() {
             </div>
           </div>
 
-          <p className="text-[10px] text-gray-400 font-bold italic">
+          <p className="text-sm md:text-base text-gray-400 font-bold italic">
             Usually updates within 2 to 4 hours. No manual refresh needed.
           </p>
         </div>
 
         {/* ================= SUPPORT ACTIONS ================= */}
         <div className="space-y-4 max-w-md mx-auto pt-2">
-          <div className="text-xs font-bold text-gray-300 uppercase tracking-widest">
+          <div className="text-sm md:text-lg font-bold text-gray-300 uppercase tracking-widest">
             Want to Expedite Clearance?
           </div>
           

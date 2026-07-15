@@ -77,7 +77,7 @@ export default function Contact() {
             <span className="text-gold-gradient font-black">Help Desk</span>
           </h1>
           <p className="text-sm text-gray-400 font-semibold leading-relaxed">
-            Get prompt feedback, custom hauling estimates, and immediate visa eligibility reviews.
+            Get prompt responses, customized logistics quotes, travel bookings, and immediate support from our Port Harcourt help desk.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ export default function Contact() {
               <h2 className="text-lg font-extrabold text-white uppercase tracking-wide">
                 Direct Contact Points
               </h2>
-              <p className="text-xs text-gray-400 font-semibold leading-relaxed">
+              <p className="text-sm md:text-lg text-gray-400 font-semibold leading-relaxed">
                 Reach out via email, telephone, or drop by our head office in Port Harcourt. Our desk is open Monday to Saturday.
               </p>
             </div>
@@ -103,7 +103,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold text-white uppercase tracking-wider">Corporate Headquarters</h3>
-                  <p className="text-[11px] text-gray-400 font-bold mt-1">Port Harcourt, Rivers State, Nigeria</p>
+                  <p className="text-sm md:text-base text-gray-400 font-bold mt-1">Port Harcourt, Rivers State, Nigeria</p>
                 </div>
               </div>
 
@@ -140,7 +140,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold text-white uppercase tracking-wider">Office Hours</h3>
-                  <p className="text-[11px] text-gray-400 font-bold mt-1">Monday - Saturday: 8:00 AM - 6:00 PM (GMT +1)</p>
+                  <p className="text-sm md:text-base text-gray-400 font-bold mt-1">Monday - Saturday: 8:00 AM - 6:00 PM (GMT +1)</p>
                 </div>
               </div>
             </div>
@@ -148,7 +148,7 @@ export default function Contact() {
             {/* Quick WhatsApp Support Callout */}
             <div className="p-5 bg-gold-500/10 rounded-2xl border border-gold-500/20 text-center space-y-3">
               <h4 className="text-xs font-bold text-white uppercase tracking-wider">Need an Instant Rate Quote?</h4>
-              <p className="text-[10px] text-gray-400 font-bold leading-relaxed">
+              <p className="text-sm md:text-base text-gray-400 font-bold leading-relaxed">
                 Connect directly with a cargo router or travels desk specialist on WhatsApp for quick estimates.
               </p>
               <a
@@ -173,7 +173,7 @@ export default function Contact() {
                 <h3 className="text-lg font-extrabold text-white uppercase tracking-wide">
                   Message Dispatched!
                 </h3>
-                <p className="text-xs text-gray-400 font-semibold max-w-sm mx-auto leading-relaxed">
+                <p className="text-sm md:text-lg text-gray-400 font-semibold max-w-sm mx-auto leading-relaxed">
                   Thanks for reaching out! A specialist from our Port Harcourt desk has received your details and will get back to you within 24 hours.
                 </p>
                 <button
@@ -190,13 +190,13 @@ export default function Contact() {
                   <h2 className="text-lg font-extrabold text-white uppercase tracking-wide">
                     Email Inquiry Form
                   </h2>
-                  <p className="text-xs text-gray-400 font-semibold">
+                  <p className="text-sm md:text-lg text-gray-400 font-semibold">
                     Submit your general inquiries or customized business requests.
                   </p>
                 </div>
 
                 {error && (
-                  <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-rose-400 text-xs font-semibold flex items-center gap-2">
+                  <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-rose-400 text-sm md:text-lg font-semibold flex items-center gap-2">
                     <AlertCircle className="w-4 h-4 shrink-0" />
                     {error}
                   </div>
@@ -257,8 +257,8 @@ export default function Contact() {
                       <option value="Travels Option">Travels / Visa Program</option>
                       <option value="Deliveries Rate">Delivery / Parcel Dispatch</option>
                       <option value="Haulage Quote">Haulage Cargo Quotation</option>
-                      <option value="Property Movement">Household Relocation</option>
-                      <option value="Luxury Car Booking">Luxury Vehicle Rentals</option>
+                      <option value="Property Movement">Property Relocation</option>
+                      <option value="Luxury Rentals">Luxury Rentals (Vehicles & Jets)</option>
                     </select>
                   </div>
                 </div>

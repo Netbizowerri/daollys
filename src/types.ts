@@ -19,6 +19,22 @@ export interface TravelPackage {
   totalCost?: string;
 }
 
+export interface SubService {
+  slug: string;
+  title: string;
+  subtitle: string;
+  shortCopy: string;
+  iconName: string;
+  overviewCopy: string;
+  imageTheme: string;
+  imageUrl: string;
+  videoUrl?: string;
+  whatsIncluded: string[];
+  processSteps: { title: string; description: string }[];
+  ctaText: string;
+  bookingUrl: string;
+}
+
 export interface ServiceDetail {
   slug: string;
   title: string;
@@ -36,6 +52,8 @@ export interface ServiceDetail {
   }[];
   ctaText: string;
   bookingUrl: string;
+  bannerUrl?: string;
+  subServices?: SubService[];
 }
 
 export interface Testimonial {

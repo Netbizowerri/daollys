@@ -6,17 +6,20 @@ export const SERVICES: ServiceDetail[] = [
     title: "International & Local Travel Bookings",
     subtitle: "Flights, Visas, Hotels, Tour Packages",
     iconName: "Globe",
-    shortCopy: "Seamless flight bookings, trusted visa consulting, premium hotel reservations, and customized holiday packages.",
-    overviewCopy: "We take the complexity out of global and local travels. From booking the best flight rates and luxury hotel stays to complete visa consulting and tailored tour packages, our expert travel officers provide end-to-end, high-touch support.",
+    shortCopy: "Complete travel logistics solutions — flight bookings, visa assistance, hotel reservations, corporate travel management, and private jet charter arrangements.",
+    overviewCopy: "At Da Ollys Integrated Services Limited, we provide complete travel logistics solutions designed to make local and international travel smooth and stress-free. We coordinate every stage of our clients' journeys — from flight bookings and visa processing to hotel reservations, airport transfers, and corporate travel management — ensuring convenience, efficiency, and peace of mind.",
     imageTheme: "Airport departure board / passport & boarding pass flatlay",
     imageUrl: "https://i.ibb.co/qMfk7Y21/DA-OLLYS-9.jpg",
     videoUrl: "https://www.youtube.com/shorts/ZvaJ11TEIw8",
     whatsIncluded: [
-      "Expert Visa Consulting & Complete Documentation Support",
-      "International & Domestic Flight Bookings",
-      "Premium Hotel Reservations & Luxury Stays Worldwide",
-      "Curated Holiday, Honeymoon & Corporate Tour Packages",
-      "Pre-Departure Briefings & Travel Insurance Support"
+      "Flight Booking & Reservations (Local & International)",
+      "Visa Assistance & Processing Support",
+      "Hotel & Accommodation Bookings Worldwide",
+      "Airport Pickup & Drop-Off Services",
+      "Corporate Travel Management & Group Travel Coordination",
+      "Holiday & Vacation Packages with Tour Planning",
+      "Executive Travel Services & Private Jet Charter Arrangements",
+      "Travel Insurance Assistance"
     ],
     processSteps: [
       { title: "Consultation", description: "Assess your travel or relocation plans, destination preferences, and budget." },
@@ -24,24 +27,29 @@ export const SERVICES: ServiceDetail[] = [
       { title: "Visa & Document Filing", description: "We meticulously compile and audit your visa files and booking documentation." },
       { title: "Booking Confirmation", description: "Receive finalized tickets, hotel vouchers, and helpful pre-departure briefings." }
     ],
+    bannerUrl: "https://i.ibb.co/WXFB4xy/Whats-App-Image-2026-07-08-at-7-04-33-AM-2.jpg",
     ctaText: "Start Travel Booking",
     bookingUrl: "/book/travels"
   },
   {
     slug: "deliveries",
-    title: "Reliable Logistics & Dispatch Service",
-    subtitle: "Same-day Delivery | Port Harcourt",
+    title: "Local & International Delivery Services",
+    subtitle: "Door-to-Door | Nationwide | Global Shipping",
     iconName: "Send",
-    shortCopy: "Lightning-fast same-day parcel delivery and professional dispatch courier networks in Port Harcourt.",
-    overviewCopy: "Keep your business and personal items moving with our rapid, reliable courier service. Da Ollys offers secure, trackable same-day logistics in Port Harcourt with professional riders, prompt dispatch times, and careful transport handling.",
+    shortCopy: "Fast, reliable, and secure delivery services within Nigeria and across international destinations — door-to-door.",
+    overviewCopy: "We specialize in fast, reliable, and secure delivery services within Nigeria and across international destinations. Our logistics network ensures that every shipment — from documents and parcels to bulk cargo — arrives safely and on time. Whether you need same-day dispatch within Port Harcourt, nationwide parcel distribution, or international courier services with customs clearance support, Da Ollys delivers.",
     imageTheme: "Delivery bike rider in motion / parcel handoff",
     imageUrl: "https://i.ibb.co/6cFvcWbg/DA-OLLYS-8.jpg",
     whatsIncluded: [
-      "Same-Day Courier Dispatch within Port Harcourt Metro",
-      "Secure Parcel Delivery & Fragile Item Handling",
-      "E-Commerce Merchant Logistics & Bulk Deliveries",
-      "Scheduled Route Pickups & Corporate Courier Contracts",
-      "Instant Delivery Confirmation Notifications"
+      "Door-to-Door Deliveries (Local & International)",
+      "Same-Day Deliveries within Port Harcourt Metro",
+      "Nationwide Parcel Distribution",
+      "International Courier Services",
+      "Document Delivery & Secure Parcel Handling",
+      "E-Commerce Logistics & Express Cargo Services",
+      "Business-to-Business & Business-to-Customer Logistics",
+      "Customs Clearance Support & Cargo Tracking",
+      "Last-Mile Delivery"
     ],
     processSteps: [
       { title: "Schedule Dispatch", description: "Enter pickup and drop-off locations, parcel dimensions, and pick a time." },
@@ -49,77 +57,111 @@ export const SERVICES: ServiceDetail[] = [
       { title: "Careful Transit", description: "Your package is securely packed, loaded, and fast-tracked through optimized routes." },
       { title: "Delivered & Signed", description: "Recipient receives the parcel with immediate status and delivery confirmation." }
     ],
+    bannerUrl: "https://i.ibb.co/tMFS9qJy/Whats-App-Image-2026-07-08-at-7-04-33-AM-1.jpg",
     ctaText: "Book a Dispatch Rider",
     bookingUrl: "/book/deliveries"
   },
   {
-    slug: "luxury-car-rentals",
-    title: "Luxury Car Rentals",
-    subtitle: "Private Chauffeur | Weddings | Business Trips",
-    iconName: "Car",
-    shortCopy: "Ride in absolute comfort and class with our executive fleet of premium vehicles and professional chauffeurs.",
-    overviewCopy: "Elevate your travel experience with our luxury car rentals. Tailored specifically for weddings, executive business transport, VIP escorts, and security protocol services, our elite fleet is accompanied by professional, highly polished personal chauffeurs.",
-    imageTheme: "Black luxury sedan/SUV, polished exterior shot",
+    slug: "luxury-rentals",
+    title: "Luxury Rentals",
+    subtitle: "Premium Vehicles, Chauffeur Services & Private Jet Charters",
+    iconName: "Sparkles",
+    shortCopy: "Premium transportation and luxury rental services tailored for executives, dignitaries, weddings, events, and corporate clients.",
+    overviewCopy: "We offer premium transportation and luxury rental services tailored for executives, dignitaries, tourists, weddings, events, and corporate clients. Every vehicle is maintained to the highest standards, providing comfort, elegance, safety, and reliability. Whether you need a chauffeur-driven executive sedan, a luxury SUV for a wedding, or a private jet charter for your next business trip, Da Ollys delivers an unparalleled premium experience.",
+    imageTheme: "Black luxury sedan/SUV with private jet tarmac background",
     imageUrl: "https://i.ibb.co/9fDM3V6/DA-OLLYS-10.jpg",
     videoUrl: "https://www.youtube.com/shorts/SWxf1JhktPA",
     whatsIncluded: [
-      "Executive Chauffeur-Driven Sedans & Luxury SUVs",
-      "Pristine Wedding Fleet Vehicles with optional custom decor",
-      "Highly Vetted, Security-Trained Chauffeurs",
-      "VIP Convoys & Security Escort Vehicle Coordination",
-      "Flexible Rental Plans (Hourly, Daily, or Long-term Lease)"
+      "Luxury SUVs & Executive Sedans",
+      "Chauffeur-Driven Vehicles",
+      "Wedding Car Rentals & Event Transportation",
+      "Corporate Executive Transport",
+      "Airport Executive Transfers & VIP Transportation",
+      "Private Jet Charter Coordination",
+      "Long-Term Executive Vehicle Leasing"
     ],
     processSteps: [
-      { title: "Browse Fleet", description: "Select from executive SUVs, Prado TXL, Mercedes-Benz, or luxury sedans." },
-      { title: "Book Duration", description: "Choose rental dates, durations, and specific security or chauffeur instructions." },
-      { title: "Chauffeur Arrival", description: "A highly polite, polished driver arrives early with a fully detailed, clean vehicle." },
-      { title: "VIP Experience", description: "Sit back and relax in comfort, enjoying a smooth, stress-free, and safe ride." }
+      { title: "Select Your Luxury Mode", description: "Choose between our elite ground fleet or private air charter options." },
+      { title: "Customize Your Experience", description: "Specify vehicle type, aircraft category, duration, and any special protocol requests." },
+      { title: "White-Glove Coordination", description: "Our concierge team arranges every detail — from chauffeur arrival to FBO lounge access." },
+      { title: "Premium Experience", description: "Enjoy absolute comfort, privacy, and class from departure to destination." }
     ],
-    ctaText: "Book a Premium Ride",
-    bookingUrl: "/book/luxury-car-rentals"
-  },
-  {
-    slug: "private-jet-charter",
-    title: "Private Jet & VIP Charter Services",
-    subtitle: "Fly in Style, Fly with Class.",
-    iconName: "Plane",
-    shortCopy: "Exclusive private jet charters, helicopter transfers, and elite VIP aviation travel solutions.",
-    overviewCopy: "Experience the ultimate peak of aviation luxury. Our private jet and VIP charter services bypass commercial airport crowds, flying you on your own schedule with exceptional safety, complete privacy, and unparalleled cabin hospitality.",
-    imageTheme: "Elite private jet aircraft on tarmac / private aviation lounge",
-    imageUrl: "https://i.ibb.co/fYF7SKtf/DA-OLLYS-11.jpg",
-    videoUrl: "https://www.youtube.com/shorts/jOhbpDhacOc",
-    whatsIncluded: [
-      "On-Demand Private Jet Charters & VIP Flight Solutions",
-      "Private Terminal / FBO Lounge Access with zero queues",
-      "Gourmet Inflight Custom Catering & Premium Cabin Attendants",
-      "VIP Helicopter Airport Shuttles & Intra-State Heli-Routes",
-      "Complete Coordination with Ground Luxury Chauffeurs"
-    ],
-    processSteps: [
-      { title: "Charter Request", description: "Provide routing parameters, passenger headcount, and preferred travel times." },
-      { title: "Curated Quotes", description: "Our flight logistics team offers a select list of matched private jet models." },
-      { title: "Swift Departure", description: "Arrive at the private lounge, enjoy express security, and board in 15 minutes." },
-      { title: "Elite Flight", description: "Fly in absolute comfort and class, landing directly at your destination." }
-    ],
-    ctaText: "Request Jet Charter",
-    bookingUrl: "/book/private-jet-charter"
+    bannerUrl: "https://i.ibb.co/TqwxxLHY/Whats-App-Image-2026-07-08-at-7-04-33-AM.jpg",
+    ctaText: "Explore Luxury Rentals",
+    bookingUrl: "/book/luxury-rentals",
+    subServices: [
+      {
+        slug: "luxury-car-rentals",
+        title: "Luxury Car Rentals",
+        subtitle: "SUVs, Executive Sedans, Chauffeur Services",
+        shortCopy: "Premium luxury vehicles with professional chauffeurs — perfect for weddings, executive transport, and VIP occasions.",
+        iconName: "Car",
+        overviewCopy: "Experience the pinnacle of ground transportation with our luxury rental fleet. From executive sedans and luxury SUVs to wedding cars and VIP transport, every vehicle is maintained to the highest standards. Our professional chauffeurs provide comfort, elegance, safety, and reliability for every occasion.",
+        imageTheme: "Black luxury sedan/SUV, polished exterior shot",
+        imageUrl: "https://i.ibb.co/9fDM3V6/DA-OLLYS-10.jpg",
+        videoUrl: "https://www.youtube.com/shorts/SWxf1JhktPA",
+        whatsIncluded: [
+          "Executive Chauffeur-Driven Sedans & Luxury SUVs",
+          "Pristine Wedding Fleet Vehicles with optional custom decor",
+          "Highly Vetted, Security-Trained Chauffeurs",
+          "VIP Convoys & Security Escort Vehicle Coordination",
+          "Flexible Rental Plans (Hourly, Daily, or Long-term Lease)"
+        ],
+        processSteps: [
+          { title: "Browse Fleet", description: "Select from executive SUVs, Prado TXL, Mercedes-Benz, or luxury sedans." },
+          { title: "Book Duration", description: "Choose rental dates, durations, and specific security or chauffeur instructions." },
+          { title: "Chauffeur Arrival", description: "A highly polite, polished driver arrives early with a fully detailed, clean vehicle." },
+          { title: "VIP Experience", description: "Sit back and relax in comfort, enjoying a smooth, stress-free, and safe ride." }
+        ],
+        ctaText: "Book a Premium Ride",
+        bookingUrl: "/book/luxury-rentals?sub=luxury-car-rentals"
+      },
+      {
+        slug: "private-jet-charter",
+        title: "Private Jet & VIP Charter Services",
+        subtitle: "On-Demand Charters | VIP Aviation | Helicopter Transfers",
+        shortCopy: "Exclusive private jet charters, helicopter transfers, and elite VIP aviation travel solutions for executives and dignitaries.",
+        iconName: "Plane",
+        overviewCopy: "Take to the skies with our private jet and VIP charter services. Bypass commercial airport crowds and fly on your own schedule with exceptional safety, complete privacy, and unparalleled cabin hospitality. From on-demand jet charters to helicopter transfers and VIP aviation solutions, we deliver the ultimate air travel experience.",
+        imageTheme: "Elite private jet aircraft on tarmac / private aviation lounge",
+        imageUrl: "https://i.ibb.co/fYF7SKtf/DA-OLLYS-11.jpg",
+        videoUrl: "https://www.youtube.com/shorts/jOhbpDhacOc",
+        whatsIncluded: [
+          "On-Demand Private Jet Charters & VIP Flight Solutions",
+          "Private Terminal / FBO Lounge Access with zero queues",
+          "Gourmet Inflight Custom Catering & Premium Cabin Attendants",
+          "VIP Helicopter Airport Shuttles & Intra-State Heli-Routes",
+          "Complete Coordination with Ground Luxury Chauffeurs"
+        ],
+        processSteps: [
+          { title: "Charter Request", description: "Provide routing parameters, passenger headcount, and preferred travel times." },
+          { title: "Curated Quotes", description: "Our flight logistics team offers a select list of matched private jet models." },
+          { title: "Swift Departure", description: "Arrive at the private lounge, enjoy express security, and board in 15 minutes." },
+          { title: "Elite Flight", description: "Fly in absolute comfort and class, landing directly at your destination." }
+        ],
+        ctaText: "Request Jet Charter",
+        bookingUrl: "/book/luxury-rentals?sub=private-jet-charter"
+      }
+    ]
   },
   {
     slug: "property-movement",
-    title: "Property Movement Services",
-    subtitle: "Household & Office Relocation | Heavy Lifting | Asset Logistics",
+    title: "Property Movement & Relocation Services",
+    subtitle: "Residential & Office Relocation | Interstate & International Moves",
     iconName: "Truck",
-    shortCopy: "Professional relocation services for homes and offices — heavy lifting, asset protection, and secure transport of your valuable property.",
-    overviewCopy: "Moving your home or office shouldn't be a headache. Da Ollys Integrated Services provides end-to-end property movement solutions including careful packing, heavy lifting, furniture dismantling and reassembly, and secure transportation of all your assets. Our trained movers treat every item with the care it deserves, from fragile glassware to heavy office equipment.",
+    shortCopy: "Professional relocation services for homes and offices — packing, loading, interstate moves, and international relocation support.",
+    overviewCopy: "Moving valuable assets requires expertise, planning, and care. Da Ollys Integrated Services Limited offers professional relocation services for individuals, families, and businesses. Every move is executed with professionalism, ensuring maximum protection of clients' belongings — from residential and office relocation to commercial equipment movement, interstate and international relocation support.",
     imageTheme: "Professional movers packing and loading furniture into a moving truck",
     imageUrl: "https://i.ibb.co/v6c5GVZT/DA-OLLYS-12.jpg",
     videoUrl: "https://www.youtube.com/shorts/e0bX_wFk7Vg",
     whatsIncluded: [
-      "Professional Packing & Fragile Item Wrapping",
-      "Furniture Dismantling & Reassembly On-Site",
-      "Heavy Lifting Equipment & Trained Crew",
-      "Secure Loading & Transport to Destination",
-      "Unpacking & Placement Arrangement"
+      "Residential & Office Relocation",
+      "Commercial Equipment Movement",
+      "Furniture Moving, Packing & Unpacking",
+      "Loading & Offloading Services",
+      "Storage Coordination",
+      "Interstate & International Relocation Support",
+      "Fragile Item Handling & Equipment Transportation"
     ],
     processSteps: [
       { title: "Site Assessment", description: "We survey your property, assess item volumes, and map the optimal moving plan." },
@@ -133,18 +175,20 @@ export const SERVICES: ServiceDetail[] = [
   {
     slug: "haulage",
     title: "Haulage Services",
-    subtitle: "Bulk Cargo Haulage | Heavy Equipment Transport | Freight Logistics",
+    subtitle: "Heavy-Duty Transport | Industrial Logistics | Bulk Cargo Movement",
     iconName: "Package",
-    shortCopy: "Reliable heavy-duty haulage for bulk cargo, construction materials, and heavy equipment across Nigeria.",
-    overviewCopy: "Da Ollys Integrated Services offers robust haulage and freight solutions for businesses requiring bulk cargo movement, heavy equipment transport, and construction material logistics. Our fleet of heavy-duty trucks and experienced operators ensures your goods arrive on time, every time, across all major routes in Nigeria.",
+    shortCopy: "Dependable haulage solutions for businesses — heavy-duty transportation, industrial equipment movement, and bulk cargo across Nigeria.",
+    overviewCopy: "We provide dependable haulage solutions for businesses operating across various sectors. Our experienced drivers and logistics professionals ensure efficient transportation while maintaining the highest safety standards. From heavy-duty transportation and industrial equipment movement to construction material logistics, agricultural produce haulage, and container transportation — Da Ollys delivers your goods safely and on schedule.",
     imageTheme: "Heavy-duty haulage truck on highway / loading dock operations",
     imageUrl: "https://i.ibb.co/LfbB2rb/DA-OLLYS-13.jpg",
     whatsIncluded: [
-      "Bulk Cargo & Commodity Haulage Across Nigeria",
-      "Heavy Equipment & Machinery Transport",
-      "Construction Material Logistics",
-      "Dedicated Fleet & Scheduled Route Planning",
-      "Real-Time Cargo Tracking & Delivery Confirmation"
+      "Heavy-Duty Transportation & Industrial Equipment Movement",
+      "Construction Material Transportation",
+      "Agricultural Produce Haulage",
+      "Manufacturing & Distribution Logistics",
+      "Container Transportation & Bulk Cargo Movement",
+      "Fleet Logistics Management",
+      "Long-Distance Transportation"
     ],
     processSteps: [
       { title: "Cargo Assessment", description: "We evaluate your cargo type, volume, weight, and delivery route requirements." },
@@ -152,6 +196,7 @@ export const SERVICES: ServiceDetail[] = [
       { title: "Loading & Securement", description: "Cargo is professionally loaded, balanced, and secured for safe transit." },
       { title: "Delivery & Proof of Service", description: "Your goods arrive at the destination with full delivery documentation and confirmation." }
     ],
+    bannerUrl: "https://i.ibb.co/tMFS9qJy/Whats-App-Image-2026-07-08-at-7-04-33-AM-1.jpg",
     ctaText: "Book Haulage Service",
     bookingUrl: "/book/haulage"
   }

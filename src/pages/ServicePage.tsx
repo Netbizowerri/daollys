@@ -10,12 +10,31 @@ import { SERVICES, TRAVEL_PACKAGES, OTHER_PACKAGES } from "../data/services";
 import PageTransition from "../components/shared/PageTransition";
 import GlassCard from "../components/shared/GlassCard";
 
+// Extract YouTube video ID from various URL formats
+function getYouTubeId(url: string): string {
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=)([a-zA-Z0-9_-]+)/,
+    /(?:youtu\.be\/)([a-zA-Z0-9_-]+)/,
+    /(?:youtube\.com\/shorts\/)([a-zA-Z0-9_-]+)/,
+    /(?:youtube\.com\/embed\/)([a-zA-Z0-9_-]+)/
+  ];
+  for (const p of patterns) {
+    const m = url.match(p);
+    if (m) return m[1];
+  }
+  return url.split("/").pop()?.split("?")[0] ?? "";
+}
+
 export default function ServicePage() {
   const { serviceSlug } = useParams();
   const [activeTab, setActiveTab] = useState("visas"); // "visas" | "tours" | "hotels" | "flights"
+  const [luxurySub, setLuxurySub] = useState(0); // index into subServices
   
   // Find current service
   const service = SERVICES.find(s => s.slug === serviceSlug);
+  
+  // For Luxury Rentals, get active sub-service
+  const activeSub = service?.subServices?.[luxurySub];
 
   if (!service) {
     return (
@@ -23,8 +42,8 @@ export default function ServicePage() {
         <div className="max-w-md mx-auto text-center py-20 space-y-6">
           <HelpCircle className="w-16 h-16 text-rose-500 mx-auto" />
           <h2 className="text-2xl font-bold text-white">Service Not Found</h2>
-          <p className="text-xs text-gray-400 font-semibold">
-            The requested service portfolio does not exist in our corporate directories.
+            <p className="text-sm md:text-lg text-gray-400 font-semibold">
+              The requested service portfolio does not exist in our corporate directories.
           </p>
           <Link to="/" className="inline-flex items-center gap-2 bg-gold-gradient text-navy-900 font-bold px-6 py-2.5 rounded-full text-xs uppercase tracking-wider">
             <ArrowLeft className="w-4 h-4" /> Return Home
@@ -72,6 +91,20 @@ export default function ServicePage() {
           </div>
         </div>
 
+        {/* ================= 1.5 BANNER ================= */}
+        {service.bannerUrl && (
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+              <img
+                src={service.bannerUrl}
+                alt={`${service.title} banner`}
+                className="w-full h-auto object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+        )}
+
         {/* ================= 2. OVERVIEW COPY BLOCK & 3. WHAT'S INCLUDED ================= */}
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
           
@@ -83,9 +116,46 @@ export default function ServicePage() {
             <p className="text-sm text-gray-300 leading-relaxed font-semibold">
               {service.overviewCopy}
             </p>
-            <p className="text-xs text-gray-400 leading-relaxed font-medium">
+            <p className="text-sm md:text-lg text-gray-400 leading-relaxed font-medium">
               Da Ollys Integrated Services Ltd holds certified clearances to handle this segment. Every team member assigned to your booking is fully verified, carrying deep logistical or professional expertise.
             </p>
+
+            {/* If Luxury Rentals, display Sub-Service tabs */}
+            {service.slug === "luxury-rentals" && service.subServices && (
+              <div className="pt-8 space-y-8">
+                <div className="grid grid-cols-2 gap-2 bg-white/5 p-1.5 rounded-2xl border border-white/10">
+                  {service.subServices.map((sub, idx) => (
+                    <button
+                      key={sub.slug}
+                      onClick={() => setLuxurySub(idx)}
+                      className={`flex items-center justify-center gap-2 py-3 px-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                        luxurySub === idx
+                          ? "bg-gold-gradient text-navy-900 shadow-md"
+                          : "text-gray-300 hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      {sub.title}
+                    </button>
+                  ))}
+                </div>
+
+                {activeSub && (
+                  <div className="space-y-6 animate-fade-in">
+                    <div className="border-l-4 border-gold-500 pl-4 py-1">
+                      <h3 className="text-lg font-black text-white uppercase tracking-tight">
+                        {activeSub.title}
+                      </h3>
+                      <p className="text-sm md:text-lg text-gray-400 font-semibold mt-0.5">
+                        {activeSub.subtitle}
+                      </p>
+                    </div>
+                    <p className="text-sm text-gray-300 leading-relaxed font-semibold">
+                      {activeSub.overviewCopy}
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* If Travels, display Interactive Tabs and Sub-Services */}
             {service.slug === "travels" && (
@@ -145,8 +215,8 @@ export default function ServicePage() {
                       <h3 className="text-lg font-black text-white uppercase tracking-tight">
                         Elite Visa & Residency Packages
                       </h3>
-                      <p className="text-xs text-gray-400 font-semibold mt-0.5">
-                        Our verified pathways for study, work, exploration, and global migration.
+                    <p className="text-sm md:text-lg text-gray-400 font-semibold mt-0.5">
+                      Our verified pathways for study, work, exploration, and global migration.
                       </p>
                     </div>
 
@@ -171,7 +241,7 @@ export default function ServicePage() {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
                           {/* Left details: 8 cols on desktop */}
                           <div className="order-2 lg:order-1 lg:col-span-8 space-y-6">
-                            <p className="text-xs text-gray-300 font-semibold leading-relaxed">
+                            <p className="text-sm md:text-lg text-gray-300 font-semibold leading-relaxed">
                               Secure standard admissions into premium partner institutions in Canada. Our visa expert panel manages your files, logs tuition deposits, compiles proof of funds, and organizes robust employment files to assure a successful visa decision.
                             </p>
 
@@ -209,7 +279,7 @@ export default function ServicePage() {
                                 Steps toward a guaranteed study visa
                               </h4>
                               
-                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-[11px] font-bold text-gray-300 pl-1">
+                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm md:text-base font-bold text-gray-300 pl-1">
                                 <li className="flex items-start gap-2">
                                   <span className="p-1 bg-white/10 rounded-full text-emerald-400 shrink-0">✓</span>
                                   Admission offer from Designated DLI College
@@ -250,7 +320,7 @@ export default function ServicePage() {
                         </div>
 
                         <div className="pt-3 border-t border-gold-500/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                          <span className="text-[10px] text-gray-400 font-bold italic">
+                          <span className="text-sm md:text-base text-gray-400 italic">
                             * Dependent processing visa fee: ₦1,000,000 per person.
                           </span>
                           <Link
@@ -286,7 +356,7 @@ export default function ServicePage() {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
                           {/* Left details: 8 cols on desktop */}
                           <div className="order-2 lg:order-1 lg:col-span-8 space-y-6">
-                            <p className="text-xs text-gray-300 font-semibold leading-relaxed">
+                            <p className="text-sm md:text-lg text-gray-300 font-semibold leading-relaxed">
                               Experience a seamless getaway with our exclusive Qatar travel package, tailored for pairs. This all-in-one promotion covers both your visa and hotel accommodation for two travelers.
                             </p>
 
@@ -324,7 +394,7 @@ export default function ServicePage() {
                                 How to Book & Requirements
                               </h4>
                               
-                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-[11px] font-bold text-gray-300 pl-1">
+                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm md:text-base font-bold text-gray-300 pl-1">
                                 <li className="flex items-start gap-2">
                                   <span className="p-1 bg-white/10 rounded-full text-emerald-400 shrink-0">✓</span>
                                   Provides complete visa processing for both travelers
@@ -361,7 +431,7 @@ export default function ServicePage() {
                         </div>
 
                         <div className="pt-3 border-t border-gold-500/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                          <span className="text-[10px] text-gray-400 font-bold italic">
+                          <span className="text-sm md:text-base text-gray-400 italic">
                             * Promo price is fixed for two persons sharing a room.
                           </span>
                           <Link
@@ -397,7 +467,7 @@ export default function ServicePage() {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
                           {/* Left details: 8 cols on desktop */}
                           <div className="order-2 lg:order-1 lg:col-span-8 space-y-6">
-                            <p className="text-xs text-gray-300 font-semibold leading-relaxed">
+                            <p className="text-sm md:text-lg text-gray-300 font-semibold leading-relaxed">
                               Live and work in Oman independently with our comprehensive 2-Year Freelance Visa program. This package handles your entry clearance, medical procedures, national ID registration, and administrative requirements.
                             </p>
 
@@ -435,7 +505,7 @@ export default function ServicePage() {
                                 Required Application Documents
                               </h4>
                               
-                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-[11px] font-bold text-gray-300 pl-1">
+                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm md:text-base font-bold text-gray-300 pl-1">
                                 <li className="flex items-start gap-2">
                                   <span className="p-1 bg-white/10 rounded-full text-emerald-400 shrink-0">✓</span>
                                   Data page of international passport (clear scan)
@@ -476,7 +546,7 @@ export default function ServicePage() {
                         </div>
 
                         <div className="pt-3 border-t border-gold-500/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                          <span className="text-[10px] text-gray-400 font-bold italic">
+                          <span className="text-sm md:text-base text-gray-400 italic">
                             * All-inclusive fee covers medical, national ID, and official clearance.
                           </span>
                           <Link
@@ -512,7 +582,7 @@ export default function ServicePage() {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
                           {/* Left details: 8 cols on desktop */}
                           <div className="order-2 lg:order-1 lg:col-span-8 space-y-6">
-                            <p className="text-xs text-gray-300 font-semibold leading-relaxed">
+                            <p className="text-sm md:text-lg text-gray-300 font-semibold leading-relaxed">
                               Explore the history, culture, and nature of Georgia. Our dedicated team guides you through the application process for a standard 90-day entry visa to discover Georgia's scenic landmarks and vibrant urban centers.
                             </p>
 
@@ -550,7 +620,7 @@ export default function ServicePage() {
                                 Application Guidelines & Requirements
                               </h4>
                               
-                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-[11px] font-bold text-gray-300 pl-1">
+                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm md:text-base font-bold text-gray-300 pl-1">
                                 <li className="flex items-start gap-2">
                                   <span className="p-1 bg-white/10 rounded-full text-emerald-400 shrink-0">✓</span>
                                   A valid international passport (clear scan of data page)
@@ -587,7 +657,7 @@ export default function ServicePage() {
                         </div>
 
                         <div className="pt-3 border-t border-gold-500/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                          <span className="text-[10px] text-gray-400 font-bold italic">
+                          <span className="text-sm md:text-base text-gray-400 italic">
                             * Standard entry rules and conditions apply upon arrival.
                           </span>
                           <Link
@@ -623,7 +693,7 @@ export default function ServicePage() {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
                           {/* Left details: 8 cols on desktop */}
                           <div className="order-2 lg:order-1 lg:col-span-8 space-y-6">
-                            <p className="text-xs text-gray-300 font-semibold leading-relaxed">
+                            <p className="text-sm md:text-lg text-gray-300 font-semibold leading-relaxed">
                               Our Germany Work Visa Program offers a reliable legal process, complete employer matching, and trusted relocation support to help you move toward a better future in Europe.
                             </p>
 
@@ -676,7 +746,7 @@ export default function ServicePage() {
                                   Required Application Documents
                                 </h4>
                                 
-                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-[11px] font-bold text-gray-300 pl-1">
+                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm md:text-base font-bold text-gray-300 pl-1">
                                   <li className="flex items-start gap-2">
                                     <span className="p-1 bg-white/10 rounded-full text-emerald-400 shrink-0">✓</span>
                                     Data page of standard international passport
@@ -714,7 +784,7 @@ export default function ServicePage() {
                         </div>
 
                         <div className="pt-3 border-t border-gold-500/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                          <span className="text-[10px] text-gray-400 font-bold italic">
+                          <span className="text-sm md:text-base text-gray-400 italic">
                             * End-to-end support is provided for visa registration and employer alignment.
                           </span>
                           <Link
@@ -750,7 +820,7 @@ export default function ServicePage() {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
                           {/* Left details: 8 cols on desktop */}
                           <div className="order-2 lg:order-1 lg:col-span-8 space-y-6">
-                            <p className="text-xs text-gray-300 font-semibold leading-relaxed">
+                            <p className="text-sm md:text-lg text-gray-300 font-semibold leading-relaxed">
                               Our Serbia Work Visa Program offers a reliable process, fast transition to a 1-year employment card, legal employment as a Warehouse Worker, and a gateway to a growing European labor market with a low cost of living.
                             </p>
 
@@ -801,7 +871,7 @@ export default function ServicePage() {
                                   Required Application Documents
                                 </h4>
                                 
-                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-[11px] font-bold text-gray-300 pl-1">
+                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm md:text-base font-bold text-gray-300 pl-1">
                                   <li className="flex items-start gap-2">
                                     <span className="p-1 bg-white/10 rounded-full text-emerald-400 shrink-0">✓</span>
                                     International passport clear data page scan
@@ -839,7 +909,7 @@ export default function ServicePage() {
                         </div>
 
                         <div className="pt-3 border-t border-gold-500/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                          <span className="text-[10px] text-gray-400 font-bold italic">
+                          <span className="text-sm md:text-base text-gray-400 italic">
                             * Program covers fast transition to a 1-year residency card upon arrival.
                           </span>
                           <Link
@@ -866,7 +936,7 @@ export default function ServicePage() {
                               <span className="text-2xl">{pkg.flag}</span>
                               <h5 className="text-sm font-bold text-white leading-tight">{pkg.title}</h5>
                             </div>
-                            <p className="text-[11px] text-gray-400 font-medium leading-relaxed min-h-[2.5rem]">
+                            <p className="text-sm md:text-base text-gray-400 font-medium leading-relaxed min-h-[2.5rem]">
                               {pkg.subtitle}
                             </p>
                             {pkg.timeline && (
@@ -897,7 +967,7 @@ export default function ServicePage() {
                       <h3 className="text-lg font-black text-white uppercase tracking-tight">
                         Curated Holiday & Tour Packages
                       </h3>
-                      <p className="text-xs text-gray-400 font-semibold mt-0.5">
+                      <p className="text-sm md:text-lg text-gray-400 font-semibold mt-0.5">
                         Experience hassle-free travel with pre-planned routes, premium stays, local logistics, and unforgettable guided tours.
                       </p>
                     </div>
@@ -908,7 +978,7 @@ export default function ServicePage() {
                           <Compass className="w-6 h-6" />
                         </div>
                         <h4 className="text-xs font-extrabold text-white uppercase">Curated Destinations</h4>
-                        <p className="text-[11px] text-gray-400 font-semibold leading-relaxed">
+                        <p className="text-sm md:text-base text-gray-400 font-semibold leading-relaxed">
                           We plan hand-picked, premium tour itineraries across top-tier destinations worldwide (Zanzibar, Dubai, Mombasa, UK & Schengen), handling all entry tickets and local scheduling.
                         </p>
                       </div>
@@ -918,7 +988,7 @@ export default function ServicePage() {
                           <Sparkles className="w-6 h-6" />
                         </div>
                         <h4 className="text-xs font-extrabold text-white uppercase">All-Inclusive Logistics</h4>
-                        <p className="text-[11px] text-gray-400 font-semibold leading-relaxed">
+                        <p className="text-sm md:text-base text-gray-400 font-semibold leading-relaxed">
                           Our tour packages include premium flight bookings, luxury hotel stays, daily breakfast, dynamic sightseeing tours, and smooth airport transfers bundled under a single, direct payment.
                         </p>
                       </div>
@@ -928,7 +998,7 @@ export default function ServicePage() {
                           <Globe className="w-6 h-6" />
                         </div>
                         <h4 className="text-xs font-extrabold text-white uppercase">Custom Tailored Routes</h4>
-                        <p className="text-[11px] text-gray-400 font-semibold leading-relaxed">
+                        <p className="text-sm md:text-base text-gray-400 font-semibold leading-relaxed">
                           Whether you are booking a romantic honeymoon getaway, a large-group family holiday, or a strategic corporate retreat, our travel desk designs custom schedules to fit your criteria.
                         </p>
                       </div>
@@ -970,7 +1040,7 @@ export default function ServicePage() {
                       <h3 className="text-lg font-black text-white uppercase tracking-tight">
                         Premium & Luxury Hotel Bookings
                       </h3>
-                      <p className="text-xs text-gray-400 font-semibold mt-0.5">
+                      <p className="text-sm md:text-lg text-gray-400 font-semibold mt-0.5">
                         Guaranteed competitive rates and exclusive perks at the world's finest 5-star properties and boutique apartments.
                       </p>
                     </div>
@@ -981,7 +1051,7 @@ export default function ServicePage() {
                           <Hotel className="w-6 h-6" />
                         </div>
                         <h4 className="text-xs font-extrabold text-white uppercase">Pre-negotiated Rates</h4>
-                        <p className="text-[11px] text-gray-400 font-semibold leading-relaxed">
+                        <p className="text-sm md:text-base text-gray-400 font-semibold leading-relaxed">
                           We utilize our tight network connections with premium chains (Marriott, Hilton, Radisson, Shangri-La) to secure lower pricing than standard online platforms.
                         </p>
                       </div>
@@ -991,7 +1061,7 @@ export default function ServicePage() {
                           <Sparkles className="w-6 h-6" />
                         </div>
                         <h4 className="text-xs font-extrabold text-white uppercase">VIP Perks Included</h4>
-                        <p className="text-[11px] text-gray-400 font-semibold leading-relaxed">
+                        <p className="text-sm md:text-base text-gray-400 font-semibold leading-relaxed">
                           Enjoy room upgrades (where available), complimentary gourmet breakfasts, early check-in, late check-out, and welcome cocktails on us.
                         </p>
                       </div>
@@ -1001,7 +1071,7 @@ export default function ServicePage() {
                           <Check className="w-6 h-6" />
                         </div>
                         <h4 className="text-xs font-extrabold text-white uppercase">Complete Coordination</h4>
-                        <p className="text-[11px] text-gray-400 font-semibold leading-relaxed">
+                        <p className="text-sm md:text-base text-gray-400 font-semibold leading-relaxed">
                           Our officers manage special requests, corporate invoicing, security concerns, and seamless ground transportation from the airport directly to your hotel suite.
                         </p>
                       </div>
@@ -1037,7 +1107,7 @@ export default function ServicePage() {
                       <h3 className="text-lg font-black text-white uppercase tracking-tight">
                         Seamless Flight Booking Solutions
                       </h3>
-                      <p className="text-xs text-gray-400 font-semibold mt-0.5">
+                      <p className="text-sm md:text-lg text-gray-400 font-semibold mt-0.5">
                         International and domestic airline ticketing with guaranteed competitive rates, optimal routes, and flexible conditions.
                       </p>
                     </div>
@@ -1045,10 +1115,10 @@ export default function ServicePage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="bg-white/5 p-6 rounded-2xl border border-white/10 space-y-4">
                         <h4 className="text-sm font-extrabold text-gold-500 uppercase">International Air Ticketing</h4>
-                        <p className="text-xs text-gray-300 font-semibold leading-relaxed">
+                        <p className="text-sm md:text-lg text-gray-300 font-semibold leading-relaxed">
                           We interface directly with major global carrier reservation desks (Qatar Airways, Emirates, British Airways, Air Peace, Ethiopian Airlines, Lufthansa, Turkish Airlines, Delta) to lock in the absolute best rates.
                         </p>
-                        <ul className="text-[11px] font-bold text-gray-400 space-y-2 pl-1">
+                        <ul className="text-sm md:text-base font-bold text-gray-400 space-y-2 pl-1">
                           <li className="flex items-center gap-1.5">✓ Economy, Business, & First Class booking catalogs</li>
                           <li className="flex items-center gap-1.5">✓ Strategic multi-city layovers & route optimization</li>
                           <li className="flex items-center gap-1.5">✓ Extended baggage allowances and check-in support</li>
@@ -1057,10 +1127,10 @@ export default function ServicePage() {
 
                       <div className="bg-white/5 p-6 rounded-2xl border border-white/10 space-y-4">
                         <h4 className="text-sm font-extrabold text-gold-500 uppercase">Domestic & Regional Travel</h4>
-                        <p className="text-xs text-gray-300 font-semibold leading-relaxed">
+                        <p className="text-sm md:text-lg text-gray-300 font-semibold leading-relaxed">
                           Secure lightning-fast flight tickets across all commercial airports in Nigeria (Lagos, Abuja, Port Harcourt, Kano, Owerri, Enugu, Uyo). Avoid sudden price hikes with our pre-booked block seats.
                         </p>
-                        <ul className="text-[11px] font-bold text-gray-400 space-y-2 pl-1">
+                        <ul className="text-sm md:text-base font-bold text-gray-400 space-y-2 pl-1">
                           <li className="flex items-center gap-1.5">✓ Same-day emergency domestic booking queues</li>
                           <li className="flex items-center gap-1.5">✓ Flexi-ticket options for hassle-free date changes</li>
                           <li className="flex items-center gap-1.5">✓ Specialized assistance for elderly or disabled passengers</li>
@@ -1068,7 +1138,7 @@ export default function ServicePage() {
                       </div>
                     </div>
 
-                    <div className="p-4 bg-gold-500/10 border border-gold-500/15 rounded-xl text-[10px] md:text-xs text-gray-300 font-bold flex items-center gap-2">
+                    <div className="p-4 bg-gold-500/10 border border-gold-500/15 rounded-xl text-sm md:text-base text-gray-300 font-bold flex items-center gap-2">
                       <Sparkles className="w-5 h-5 text-gold-500 shrink-0" />
                       Our dedicated travel desk offers 24/7 client rescue support for missed flights, sudden cancellations, or emergency rescheduling.
                     </div>
@@ -1096,30 +1166,30 @@ export default function ServicePage() {
               </h3>
 
               <ul className="space-y-4">
-                {service.whatsIncluded.map((item, idx) => (
+                {(activeSub?.whatsIncluded ?? service.whatsIncluded).map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <div className="p-1 bg-gold-500/10 rounded-full text-gold-500 mt-0.5 shrink-0">
                       <Check className="w-3.5 h-3.5" />
                     </div>
-                    <span className="text-xs text-gray-300 font-bold leading-relaxed">
+                    <span className="text-sm md:text-lg text-gray-300 font-bold leading-relaxed">
                       {item}
                     </span>
                   </li>
                 ))}
               </ul>
 
-              {service.videoUrl && (
+              {(activeSub?.videoUrl ?? service.videoUrl) && (
                 <div className="pt-4 border-t border-white/10">
                   <h4 className="text-[10px] font-black text-gold-500 uppercase tracking-widest mb-3">
                     Service Spotlight
                   </h4>
                   <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
                     <iframe
-                      src={`https://www.youtube-nocookie.com/embed/${service.videoUrl!.split("/").pop()!.split("?")[0]}?rel=0&modestbranding=1`}
-                      title={`${service.title} video`}
+                      src={`https://www.youtube.com/embed/${getYouTubeId(activeSub?.videoUrl ?? service.videoUrl!)}?rel=0`}
+                      title={`${activeSub?.title ?? service.title} video`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                      className="w-full h-full"
+                      className="absolute inset-0 w-full h-full"
                     />
                   </div>
                 </div>
@@ -1128,10 +1198,10 @@ export default function ServicePage() {
               <div className="pt-4 border-t border-white/10 text-center">
                 <Link
                   id={`srv-cta-${service.slug}`}
-                  to={service.bookingUrl}
+                  to={activeSub?.bookingUrl ?? service.bookingUrl}
                   className="w-full inline-flex items-center justify-center gap-2 bg-gold-gradient text-navy-900 font-black px-6 py-3.5 rounded-full text-xs uppercase tracking-widest hover:brightness-105 active:scale-95 transition-all"
                 >
-                  {service.ctaText}
+                  {activeSub?.ctaText ?? service.ctaText}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -1154,7 +1224,7 @@ export default function ServicePage() {
 
             {/* Horizontal Timeline */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {service.processSteps.map((step, idx) => (
+              {(activeSub?.processSteps ?? service.processSteps).map((step, idx) => (
                 <div key={idx} className="relative bg-[#0C1B4D] p-5 rounded-xl border border-white/10 space-y-3 shadow-sm">
                   <div className="absolute -top-4 left-5 bg-gold-500 text-navy-900 text-xs font-black w-8 h-8 rounded-full flex items-center justify-center border-4 border-[#0C1B4D] shadow-sm">
                     {idx + 1}
@@ -1162,7 +1232,7 @@ export default function ServicePage() {
                   <h4 className="text-xs font-bold text-white uppercase tracking-wider pt-2">
                     {step.title}
                   </h4>
-                  <p className="text-[11px] text-gray-400 font-semibold leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-400 font-semibold leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -1187,7 +1257,7 @@ export default function ServicePage() {
                 <h4 className="text-xs font-black text-white group-hover:text-gold-500 uppercase tracking-wide">
                   {srv.title}
                 </h4>
-                <p className="text-[10px] text-gray-400 font-bold truncate">
+                <p className="text-sm md:text-base text-gray-400 font-bold truncate">
                   {srv.shortCopy}
                 </p>
                 <span className="text-[9px] text-white font-black flex items-center gap-0.5 mt-1 uppercase tracking-wider hover:text-gold-500">
