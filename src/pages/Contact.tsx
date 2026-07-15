@@ -103,7 +103,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold text-white uppercase tracking-wider">Corporate Headquarters</h3>
-                  <p className="text-sm md:text-base text-gray-400 font-bold mt-1">Port Harcourt, Rivers State, Nigeria</p>
+                  <p className="text-sm md:text-base text-gray-400 font-bold mt-1 leading-relaxed">HITOGA PLAZA, PLOT 2 PIUS WUCHENDU STREET OFF NTA ROAD BESIDE TIMELESS SUPERMARKET, PORTHARCOURT, RIVERS STATE</p>
                 </div>
               </div>
 
@@ -127,8 +127,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold text-white uppercase tracking-wider">General Inquiry Desk</h3>
-                  <a href="mailto:info@daollysintegrated.com" className="text-[11px] text-gold-500 font-black mt-1 hover:underline block">
-                    info@daollysintegrated.com
+                  <a href="mailto:info@daollysintegratedservice.com" className="text-[11px] text-gold-500 font-black mt-1 hover:underline block">
+                    info@daollysintegratedservice.com
                   </a>
                 </div>
               </div>

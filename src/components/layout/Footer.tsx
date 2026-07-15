@@ -98,7 +98,7 @@ export default function Footer() {
           </h3>
           <div className="flex items-start gap-2.5">
             <MapPin className="w-5 h-5 text-gold-500 shrink-0" />
-            <span>Port Harcourt, Rivers State, Nigeria</span>
+            <span>HITOGA PLAZA, PLOT 2 PIUS WUCHENDU STREET OFF NTA ROAD BESIDE TIMELESS SUPERMARKET, PORTHARCOURT, RIVERS STATE</span>
           </div>
           <div className="flex items-center gap-2.5">
             <Phone className="w-4 h-4 text-gold-500 shrink-0" />
@@ -106,7 +106,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-2.5">
             <Mail className="w-4 h-4 text-gold-500 shrink-0" />
-            <a href="mailto:info@daollysintegrated.com" className="hover:text-gold-300 transition-colors">info@daollysintegrated.com</a>
+            <a href="mailto:info@daollysintegratedservice.com" className="hover:text-gold-300 transition-colors">info@daollysintegratedservice.com</a>
           </div>
           <div className="flex items-center gap-2.5">
             <Clock className="w-4 h-4 text-gold-500 shrink-0" />

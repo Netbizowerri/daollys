@@ -27,7 +27,7 @@ export default function LegalPage() {
           },
           {
             heading: "4. Updates and Copy",
-            body: "Our policy may be updated incrementally. For inquiries, reach out to info@daollysintegrated.com."
+            body: "Our policy may be updated incrementally. For inquiries, reach out to info@daollysintegratedservice.com."
           }
         ]
       };
