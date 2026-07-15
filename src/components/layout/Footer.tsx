@@ -98,7 +98,7 @@ export default function Footer() {
           </h3>
           <div className="flex items-start gap-2.5">
             <MapPin className="w-5 h-5 text-gold-500 shrink-0" />
-            <span>HITOGA PLAZA, PLOT 2 PIUS WUCHENDU STREET OFF NTA ROAD BESIDE TIMELESS SUPERMARKET, PORTHARCOURT, RIVERS STATE</span>
+            <span>Hitoga Plaza, Plot 2 Pius Wuchendu Street off NTA Road beside Timeless Supermarket, Portharcourt, Rivers State</span>
           </div>
           <div className="flex items-center gap-2.5">
             <Phone className="w-4 h-4 text-gold-500 shrink-0" />

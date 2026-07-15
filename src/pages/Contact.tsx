@@ -103,7 +103,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold text-white uppercase tracking-wider">Corporate Headquarters</h3>
-                  <p className="text-sm md:text-base text-gray-400 font-bold mt-1 leading-relaxed">HITOGA PLAZA, PLOT 2 PIUS WUCHENDU STREET OFF NTA ROAD BESIDE TIMELESS SUPERMARKET, PORTHARCOURT, RIVERS STATE</p>
+                  <p className="text-sm md:text-base text-gray-400 font-bold mt-1 leading-relaxed">Hitoga Plaza, Plot 2 Pius Wuchendu Street off NTA Road beside Timeless Supermarket, Portharcourt, Rivers State</p>
                 </div>
               </div>
 
