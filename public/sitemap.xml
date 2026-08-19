@@ -1,62 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://daollysintegrated.com/</loc>
+    <loc>https://www.daollysintegratedservicesltd.com/</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://daollysintegrated.com/about</loc>
+    <loc>https://www.daollysintegratedservicesltd.com/about</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://daollysintegrated.com/contact</loc>
+    <loc>https://www.daollysintegratedservicesltd.com/contact</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://daollysintegrated.com/services/travels</loc>
+    <loc>https://www.daollysintegratedservicesltd.com/services/travels</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://daollysintegrated.com/services/deliveries</loc>
+    <loc>https://www.daollysintegratedservicesltd.com/services/deliveries</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://daollysintegrated.com/services/luxury-car-rentals</loc>
+    <loc>https://www.daollysintegratedservicesltd.com/services/luxury-rentals</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://daollysintegrated.com/services/private-jet-charter</loc>
+    <loc>https://www.daollysintegratedservicesltd.com/services/property-movement</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://daollysintegrated.com/book/travels</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://www.daollysintegratedservicesltd.com/services/haulage</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://daollysintegrated.com/thank-you</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://daollysintegrated.com/privacy-policy</loc>
+    <loc>https://www.daollysintegratedservicesltd.com/privacy-policy</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://daollysintegrated.com/terms-and-conditions</loc>
+    <loc>https://www.daollysintegratedservicesltd.com/terms-and-conditions</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://daollysintegrated.com/disclaimer</loc>
+    <loc>https://www.daollysintegratedservicesltd.com/disclaimer</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

@@ -56,6 +56,40 @@ export interface ServiceDetail {
   subServices?: SubService[];
 }
 
+export interface WorkProgramStat {
+  icon: string;
+  label: string;
+  value: string;
+}
+
+export interface WorkProgramPosition {
+  title: string;
+  salary?: string;
+  details?: string[];
+}
+
+export interface WorkProgramBenefit {
+  heading: string;
+  items: string[];
+}
+
+export interface WorkProgram {
+  id: string;
+  title: string;
+  flag: string;
+  badge: string;
+  category: string;
+  description: string;
+  themePoints: string[];
+  imageUrl: string;
+  stats: WorkProgramStat[];
+  positions: WorkProgramPosition[];
+  benefits: WorkProgramBenefit[];
+  note?: string;
+  ctaText: string;
+  destination: string;
+}
+
 export interface Testimonial {
   id: string;
   quote: string;

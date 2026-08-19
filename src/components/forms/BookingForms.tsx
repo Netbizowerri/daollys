@@ -94,6 +94,20 @@ export function TravelsForm({ initialCountry = "Canada" }: { initialCountry?: st
         return ["Work Visa Program", "Job Application Support"];
       case "Serbia":
         return ["Warehouse Worker Work Visa", "1-Year Residency Transition Support"];
+      case "Albania":
+        return ["Work & Career Program", "Construction & Engineering Placement"];
+      case "Poland":
+        return ["Work Visa Program (Warehouse / Agriculture)", "Couples Work Placement"];
+      case "Bulgaria":
+        return ["Hotel Worker Program", "Hospitality Work Placement"];
+      case "Croatia":
+        return ["Work Visa Program", "Construction / Delivery Placement"];
+      case "Armenia":
+        return ["Work & E-Visa Program", "Delivery / Construction Placement"];
+      case "Ukraine":
+        return ["Work Program (1-Year Contract)", "Skilled Trade Placement"];
+      case "Montenegro":
+        return ["Work Program (Builder)", "1-Year Contract with Extension"];
       default:
         return ["Tourist Visa", "Student Stream", "Work Visa Support", "Other"];
     }
@@ -334,6 +348,13 @@ export function TravelsForm({ initialCountry = "Canada" }: { initialCountry?: st
                 <option value="Georgia">Georgia (90-Day Entry Visa)</option>
                 <option value="Germany">Germany (Work Visa Program)</option>
                 <option value="Serbia">Serbia (Work Visa Program)</option>
+                <option value="Albania">Albania (Work & Career Program)</option>
+                <option value="Poland">Poland (Work Visa Program)</option>
+                <option value="Bulgaria">Bulgaria (Hotel Worker Program)</option>
+                <option value="Croatia">Croatia (Work Visa Program)</option>
+                <option value="Armenia">Armenia (Work & E-Visa Program)</option>
+                <option value="Ukraine">Ukraine (Work Program)</option>
+                <option value="Montenegro">Montenegro (Work Program)</option>
                 <option value="Other">Other Global Pathways</option>
               </select>
             </div>

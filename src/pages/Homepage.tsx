@@ -197,7 +197,7 @@ export default function Homepage() {
                     <Link
                       id={`srv-learn-${srv.slug}`}
                       to={`/services/${srv.slug}`}
-                      className="w-full py-3 bg-white/5 border border-white/10 text-white hover:bg-gold-gradient hover:text-navy-900 hover:border-transparent text-center text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-1.5"
+                      className="w-full py-3 bg-white/5 border border-white/10 text-white hover:bg-gold-500/10 hover:text-gold-500 hover:border-gold-500/30 text-center text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-1.5"
                     >
                       Explore Service Options
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -271,9 +271,9 @@ export default function Homepage() {
                   {/* Card Body */}
                   <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                     <div className="space-y-2">
-                      <h3 className="text-sm font-black text-white tracking-tight leading-snug group-hover:text-gold-300 transition-colors">
-                        {pkg.title}
-                      </h3>
+<h3 className="text-xl md:text-2xl font-black text-white tracking-tight leading-snug group-hover:text-gold-300 transition-colors">
+  {pkg.title}
+</h3>
                       <p className="text-sm md:text-base text-gray-300 font-medium leading-relaxed line-clamp-3">
                         {pkg.subtitle}
                       </p>
@@ -298,21 +298,25 @@ export default function Homepage() {
                 </div>
               ))}
 
-              {/* View More CTA — fills remaining columns (col-span-2 on xl) */}
+              {/* View More CTA — full-width centered banner */}
               <Link
                 to="/services/travels"
-                className="col-span-full md:col-span-2 lg:col-span-3 xl:col-span-2 bg-gradient-to-br from-gold-500/10 to-gold-500/5 border-2 border-dashed border-gold-500/30 rounded-2xl flex flex-col items-center justify-center p-8 gap-3 group hover:border-gold-500/60 hover:from-gold-500/15 hover:to-gold-500/10 transition-all duration-300 min-h-[24rem]"
+                className="col-span-full bg-gradient-to-br from-gold-500/10 to-gold-500/5 border-2 border-dashed border-gold-500/30 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6 p-8 group hover:border-gold-500/60 hover:from-gold-500/15 hover:to-gold-500/10 transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-full bg-gold-gradient/20 border border-gold-500/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl">🌍</span>
+                <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+                  <div className="w-14 h-14 rounded-full bg-gold-gradient/20 border border-gold-500/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
+                    <span className="text-2xl">🌍</span>
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-lg font-black text-white">
+                      View More Visa & Travel Packages
+                    </h3>
+                    <p className="text-sm md:text-base text-gray-400 font-medium max-w-xl">
+                      Explore all 8 elite visa and relocation packages including Canada, Qatar, Oman, Germany, Georgia, Serbia, Albania & Poland
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-black text-white text-center">
-                  View More Visa <br />& Travel Packages
-                </h3>
-                <p className="text-sm md:text-base text-gray-400 font-medium text-center max-w-xs">
-                  Explore all 6 elite visa and relocation packages including Canada, Qatar, Oman, Germany, Georgia & Serbia
-                </p>
-                <span className="mt-2 inline-flex items-center gap-2 px-6 py-2.5 bg-gold-gradient text-navy-900 font-black text-[11px] uppercase tracking-wider rounded-xl group-hover:brightness-105 transition-all">
+                <span className="mt-2 sm:mt-0 inline-flex items-center gap-2 px-6 py-2.5 bg-gold-gradient text-navy-900 font-black text-[11px] uppercase tracking-wider rounded-xl group-hover:brightness-105 transition-all shrink-0">
                   View All Packages <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </Link>

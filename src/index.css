@@ -27,6 +27,12 @@ html {
   color: #FFFFFF;
 }
 
+/* Offset in-page anchor targets below the fixed header */
+[id$="-program-section"],
+#other-programs-section {
+  scroll-margin-top: 7rem;
+}
+
 /* Beautiful custom selection highlight */
 ::selection {
   background-color: var(--color-gold-500);

@@ -1,4 +1,4 @@
-import { ServiceDetail, TravelPackage, Testimonial } from "../types";
+import { ServiceDetail, TravelPackage, Testimonial, WorkProgram } from "../types";
 
 export const SERVICES: ServiceDetail[] = [
   {
@@ -304,6 +304,38 @@ export const TRAVEL_PACKAGES: TravelPackage[] = [
     timeline: "2 to 3 months",
     howToBook: "Submit a high-quality scan of your passport's data page, normal passport photo, updated CV, and any educational or professional credentials.",
     imageUrl: "https://i.ibb.co/20ky1NZY/DA-OLLYS-6.jpg"
+  },
+  {
+    id: "albania",
+    title: "Albania Work & Career Program",
+    flag: "🇦🇱",
+    subtitle: "Build your career in Europe — legal & safe recruitment across 29 in-demand construction and engineering roles.",
+    description: "Our Albania Work & Career Program offers legal and safe recruitment with a 100% genuine process and a supportive team. From Software Engineers to Welders, Bricklayers, and Truck Drivers, qualified candidates are matched with verified European employers.",
+    inclusions: [
+      "29 available positions — Engineering, Construction & Skilled Trades",
+      "Legal & safe recruitment with a 100% genuine process",
+      "Supportive team throughout the full 90-day processing",
+      "Better future in Europe"
+    ],
+    timeline: "90 days",
+    howToBook: "Submit your CV and relevant professional credentials to be matched with an available position.",
+    imageUrl: "https://i.ibb.co/JRkL2w42/Albania.jpg"
+  },
+  {
+    id: "poland",
+    title: "Poland Work Visa Program",
+    flag: "🇵🇱",
+    subtitle: "Work & build a better future — warehouse and agriculture roles, couples welcome.",
+    description: "Our Poland Work Visa Program offers transparent processing for Warehouse and Agriculture Workers earning €1100 – €1500 per month. Couples (male & female) can apply together, with accommodation provided and long-term employment secured.",
+    inclusions: [
+      "Warehouse Worker & Agriculture Worker positions",
+      "€1100 – €1500 per month salary packages",
+      "Accommodation provided",
+      "Couples can apply (male & female)",
+      "50–60 hours/week with long-term employment"
+    ],
+    howToBook: "Submit your CV and passport details to begin the transparent work permit process.",
+    imageUrl: "https://i.ibb.co/Bdwk3Xj/Poland.jpg"
   }
 ];
 
@@ -363,6 +395,260 @@ export const OTHER_PACKAGES: TravelPackage[] = [
       "Pre-travel briefing and flight arrangements"
     ],
     timeline: "Rapid processing (typically 2 to 4 weeks)"
+  }
+];
+
+export const WORK_PROGRAMS: WorkProgram[] = [
+  {
+    id: "albania",
+    title: "Albania Work & Career Program",
+    flag: "🇦🇱",
+    badge: "Career in Europe",
+    category: "Employment & Migration",
+    description: "Build Your Career in Europe — legal and safe recruitment, a 100% genuine process, a supportive team, and a better future in Europe.",
+    themePoints: ["Legal & Safe Recruitment", "100% Genuine Process", "Supportive Team", "Better Future in Europe"],
+    imageUrl: "https://i.ibb.co/JRkL2w42/Albania.jpg",
+    stats: [
+      { icon: "dollar", label: "Advance Payment", value: "700 EUR" },
+      { icon: "file", label: "Payment After Visa", value: "2000 EUR" },
+      { icon: "award", label: "Total Cost", value: "2700 EUR" },
+      { icon: "clock", label: "Full Process Time", value: "90 Days" }
+    ],
+    positions: [
+      { title: "Software Engineer (PLC)" },
+      { title: "Implementation Engineer / Construction Profile" },
+      { title: "Geodetic Engineer" },
+      { title: "Construction Engineer" },
+      { title: "Construction Site Engineer" },
+      { title: "Electrical Engineer" },
+      { title: "Industrial Engineer" },
+      { title: "Architect / Structural / Mechanical Engineer" },
+      { title: "PVC Operator" },
+      { title: "Steel Fixer" },
+      { title: "Construction Carpenter" },
+      { title: "Armourer / Rebar Worker / Reinforcing Iron Worker" },
+      { title: "Driller" },
+      { title: "Construction Worker" },
+      { title: "Assistant Electrician and Plumber" },
+      { title: "Electrical Specialist" },
+      { title: "Senior Plumber" },
+      { title: "Truck Driver" },
+      { title: "Excavator Maneuverer" },
+      { title: "Bricklayer / Plasterer / Painter" },
+      { title: "Argon / MIG / TIG Welder / Electrode Welder" },
+      { title: "Truck Mechanic / Generic Mechanic / Mechanic" },
+      { title: "Project Manager" },
+      { title: "Elevator Technician / Elevator Installation Technician" },
+      { title: "Refrigeration Technician" },
+      { title: "Carpenter Furniture / Furniture Painter / Furniture Assembly / Upholsterer" },
+      { title: "Video / Audio / Lighting Technician" },
+      { title: "Sawyer" },
+      { title: "Cold Storage Room Technician" }
+    ],
+    benefits: [],
+    note: "Payment terms: 700 EUR advance after submitting candidates and 2000 EUR after receiving the visa — 2700 EUR total for the full 90-day process.",
+    ctaText: "Apply for Albania Work Program",
+    destination: "Albania"
+  },
+  {
+    id: "poland",
+    title: "Poland Work Visa Program",
+    flag: "🇵🇱",
+    badge: "Couples Welcome",
+    category: "Employment & Migration",
+    description: "Work & Build a Better Future — couples are allowed (male & female) with fully transparent processing.",
+    themePoints: ["Couples Allowed", "Male & Female", "Transparent Processing"],
+    imageUrl: "https://i.ibb.co/Bdwk3Xj/Poland.jpg",
+    stats: [
+      { icon: "map", label: "Location", value: "Poland" },
+      { icon: "clock", label: "Working Hours", value: "50–60 hrs / week" },
+      { icon: "award", label: "Accommodation", value: "Provided" },
+      { icon: "briefcase", label: "Employment", value: "Long-Term" }
+    ],
+    positions: [
+      {
+        title: "Warehouse Worker",
+        salary: "€1100 – €1500 / month",
+        details: ["Sorting & packing", "Loading & unloading", "Inventory management", "Order picking", "Keeping warehouse clean & safe"]
+      },
+      {
+        title: "Agriculture Worker",
+        salary: "€1100 – €1500 / month",
+        details: ["Crop planting & harvesting", "Greenhouse work", "Fruit & vegetable picking", "Packing & sorting", "General farm duties"]
+      }
+    ],
+    benefits: [
+      {
+        heading: "Job Benefits & Details",
+        items: [
+          "Location: Poland",
+          "Transparent work permit",
+          "50–60 hours/week",
+          "Accommodation provided",
+          "Couples can apply (male & female)",
+          "Attractive salary packages",
+          "Long-term employment"
+        ]
+      }
+    ],
+    note: "Salaries are paid monthly in EUR and accommodation is provided for all successful candidates.",
+    ctaText: "Apply for Poland Work Program",
+    destination: "Poland"
+  },
+  {
+    id: "bulgaria",
+    title: "Bulgaria Hotel Worker Program",
+    flag: "🇧🇬",
+    badge: "Hospitality Industry",
+    category: "Employment & Migration",
+    description: "Hotel Worker / Build Your Future in the Hospitality Industry — grow your career while working in Europe and exploring more.",
+    themePoints: ["Good Salary & Benefits", "Career Growth Opportunities", "Work in Europe & Explore"],
+    imageUrl: "https://i.ibb.co/JWyswsdn/Bulgaria.jpg",
+    stats: [
+      { icon: "award", label: "Minimum Age", value: "22 Years" },
+      { icon: "briefcase", label: "Hotel Experience", value: "1+ Year" },
+      { icon: "dollar", label: "Monthly Salary", value: "600 – 1200 EUR" }
+    ],
+    positions: [],
+    benefits: [
+      {
+        heading: "Why Work in Bulgaria",
+        items: [
+          "Good salary & benefits",
+          "Career growth opportunities",
+          "Work in Europe & explore more"
+        ]
+      }
+    ],
+    note: "Minimum 1 year of prior hotel experience and 22 years of age are required.",
+    ctaText: "Apply for Bulgaria Hotel Program",
+    destination: "Bulgaria"
+  },
+  {
+    id: "croatia",
+    title: "Croatia Work Visa Program",
+    flag: "🇭🇷",
+    badge: "Great Jobs. Better Life.",
+    category: "Employment & Migration",
+    description: "Great Jobs. Better Life. — Work. Earn. Live Your Dream.",
+    themePoints: ["Work", "Earn", "Live Your Dream"],
+    imageUrl: "https://i.ibb.co/C37hQyhN/Croatia.jpg",
+    stats: [
+      { icon: "briefcase", label: "Job Opportunities", value: "3 Open Roles" },
+      { icon: "dollar", label: "Salary Range", value: "€900 – €2000 / month" }
+    ],
+    positions: [
+      { title: "Construction Worker", salary: "€1500 – €2000 / month" },
+      { title: "Beer Packing and Bottling Operator", salary: "€1600 – €2000 / month" },
+      { title: "Food Delivery Courier", salary: "€900 – €1000 / month" }
+    ],
+    benefits: [],
+    note: "Salaries vary by role and are paid monthly in EUR.",
+    ctaText: "Apply for Croatia Work Program",
+    destination: "Croatia"
+  },
+  {
+    id: "armenia",
+    title: "Armenia Work & Visa Program",
+    flag: "🇦🇲",
+    badge: "100% Visa Program",
+    category: "Employment & Migration",
+    description: "Build Your Future in Europe — a 100% visa program open to all nationalities with fast e-visa processing and full support before & after travel.",
+    themePoints: ["100% Visa Program", "All Nationalities", "E-Visa"],
+    imageUrl: "https://i.ibb.co/FfgK38Y/Armenia.jpg",
+    stats: [
+      { icon: "dollar", label: "Program Price", value: "2000 EUR" },
+      { icon: "file", label: "1st Initial Payment", value: "1000 EUR" },
+      { icon: "check", label: "2nd After Visa", value: "1000 EUR" },
+      { icon: "sparkles", label: "Visa Type", value: "E-Visa" }
+    ],
+    positions: [
+      { title: "Delivery Courier / Taxi Driver", salary: "900 USD / month" },
+      { title: "Mason / Plasterer", salary: "1300 USD + OT / month" }
+    ],
+    benefits: [
+      {
+        heading: "Provided Benefits",
+        items: ["Accommodation provided", "Transportation provided"]
+      },
+      {
+        heading: "Visa Features",
+        items: ["Fast visa processing", "Easy process", "Full support before & after travel"]
+      }
+    ],
+    note: "Payment plan: 1000 EUR initial payment upfront, 1000 EUR balance after visa approval.",
+    ctaText: "Apply for Armenia Work Program",
+    destination: "Armenia"
+  },
+  {
+    id: "ukraine",
+    title: "Ukraine Work Program",
+    flag: "🇺🇦",
+    badge: "Skilled. Reliable. In Demand.",
+    category: "Employment & Migration",
+    description: "Build Your Future in Ukraine — Skilled. Reliable. In Demand.",
+    themePoints: ["Legal Work", "Safe Environment", "Good Salary", "Stable Future"],
+    imageUrl: "https://i.ibb.co/8L5cMVZk/Ukrain.jpg",
+    stats: [
+      { icon: "dollar", label: "Monthly Salary", value: "900 – 1500 USD" },
+      { icon: "calendar", label: "Contract Duration", value: "1 Year" },
+      { icon: "map", label: "Accommodation", value: "Provided" },
+      { icon: "award", label: "Medical Insurance", value: "Provided" }
+    ],
+    positions: [
+      { title: "Electrician", salary: "900 – 1500 USD / month" },
+      { title: "Tiler", salary: "900 – 1500 USD / month" },
+      { title: "Painter / Plasterer", salary: "900 – 1500 USD / month" },
+      { title: "Plumber", salary: "900 – 1500 USD / month" },
+      { title: "General Worker", salary: "900 – 1500 USD / month" }
+    ],
+    benefits: [
+      {
+        heading: "Package & Care",
+        items: [
+          "Accommodation provided",
+          "Transportation provided",
+          "Food provided",
+          "All equipment provided",
+          "Medical insurance provided"
+        ]
+      }
+    ],
+    note: "1-year contract in Ukraine — legal work, safe environment, good salary, stable future.",
+    ctaText: "Apply for Ukraine Work Program",
+    destination: "Ukraine"
+  },
+  {
+    id: "montenegro",
+    title: "Montenegro Work Program",
+    flag: "🇲🇪",
+    badge: "1-Year Contract",
+    category: "Employment & Migration",
+    description: "Work in Montenegro — open to all nationalities with a 1-year contract and the possibility to legally extend up to 2 years.",
+    themePoints: ["All Nationalities", "1-Year Contract", "Extension to 2 Years"],
+    imageUrl: "https://i.ibb.co/9HCrW53c/Montenegro.jpg",
+    stats: [
+      { icon: "calendar", label: "Contract Term", value: "1 Year" },
+      { icon: "award", label: "Legal Extension", value: "Up to 2 Years" },
+      { icon: "dollar", label: "Monthly Salary", value: "$600 – $800" }
+    ],
+    positions: [
+      { title: "Builder (Residential & Utility Complex)", salary: "$600 – $800 / month" }
+    ],
+    benefits: [
+      {
+        heading: "Support Features",
+        items: [
+          "Legal employment — 100% compliant with Montenegrin labour law",
+          "Travel support — assistance with visa & travel arrangements",
+          "Accommodation assistance — support in finding safe & comfortable accommodation",
+          "Extension possibility — extend your stay for up to 2 years legally"
+        ]
+      }
+    ],
+    note: "1-year contract with the possibility of a legal extension of up to 2 years.",
+    ctaText: "Apply for Montenegro Work Program",
+    destination: "Montenegro"
   }
 ];
 

@@ -4,11 +4,167 @@ import {
   Check, ArrowRight, ArrowLeft, Calendar, 
   DollarSign, Clock, HelpCircle, FileText, 
   Award, MapPin, Sparkles, ChevronRight, Briefcase,
-  Plane, Hotel, Compass, Globe
+  Plane, Hotel, Compass, Globe, List, type LucideIcon
 } from "lucide-react";
-import { SERVICES, TRAVEL_PACKAGES, OTHER_PACKAGES } from "../data/services";
+import { SERVICES, TRAVEL_PACKAGES, OTHER_PACKAGES, WORK_PROGRAMS } from "../data/services";
 import PageTransition from "../components/shared/PageTransition";
 import GlassCard from "../components/shared/GlassCard";
+import { WorkProgram } from "../types";
+
+const STAT_ICONS: Record<string, LucideIcon> = {
+  dollar: DollarSign,
+  clock: Clock,
+  file: FileText,
+  award: Award,
+  calendar: Calendar,
+  briefcase: Briefcase,
+  map: MapPin,
+  sparkles: Sparkles,
+  check: Check
+};
+
+function WorkProgramSection({ program }: { program: WorkProgram }) {
+  return (
+    <div id={`${program.id}-program-section`} className="space-y-8">
+      <div className="p-6 bg-gold-500/10 border border-gold-500/20 rounded-2xl space-y-6">
+        {/* Title and Badge */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-gold-500/15 pb-4">
+          <div>
+            <span className="text-[10px] text-white/80 font-black uppercase tracking-widest block mb-1">
+              {program.category}
+            </span>
+            <h3 className="text-xl font-extrabold text-white flex items-center gap-2">
+              {program.title} {program.flag}
+            </h3>
+          </div>
+          <span className="bg-white/5 border border-white/10 text-gold-500 text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider">
+            {program.badge}
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
+          {/* Left details: 8 cols on desktop */}
+          <div className="order-2 lg:order-1 lg:col-span-8 space-y-6">
+            <p className="text-sm md:text-lg text-gray-300 font-semibold leading-relaxed">
+              {program.description}
+            </p>
+
+            {program.themePoints.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {program.themePoints.map((point, idx) => (
+                  <span key={idx} className="bg-[#0B1A4A]/60 border border-white/10 text-white text-[10px] font-bold px-3 py-1 rounded-md">
+                    ✦ {point}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Icon Labeled Stat Tiles */}
+            {program.stats.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                {program.stats.map((stat, idx) => {
+                  const Icon = STAT_ICONS[stat.icon] ?? Award;
+                  return (
+                    <div key={idx} className="bg-white/5 p-4 rounded-xl border border-gold-500/10 text-center space-y-1">
+                      <Icon className="w-5 h-5 text-gold-500 mx-auto" />
+                      <span className="text-[10px] text-gray-400 uppercase font-bold tracking-wider block">{stat.label}</span>
+                      <span className="text-xs font-black text-white block">{stat.value}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+
+            {/* Available Positions */}
+            {program.positions.length > 0 && (
+              <div className="p-4 bg-white/5 border border-white/5 rounded-xl space-y-3">
+                <h4 className="text-xs font-bold text-gold-500 uppercase tracking-widest flex items-center gap-1.5">
+                  <Briefcase className="w-4 h-4" />
+                  Currently Available Positions
+                </h4>
+                <div className="space-y-3">
+                  {program.positions.map((pos, idx) => (
+                    <div key={idx} className="bg-[#0B1A4A]/40 border border-white/10 rounded-lg p-3 space-y-2">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                        <span className="text-sm font-bold text-white">💼 {pos.title}</span>
+                        {pos.salary && (
+                          <span className="text-[10px] font-black text-gold-400 bg-white/5 border border-gold-500/20 px-2.5 py-1 rounded-md w-fit shrink-0">
+                            {pos.salary}
+                          </span>
+                        )}
+                      </div>
+                      {pos.details && pos.details.length > 0 && (
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-1.5 text-xs md:text-sm font-bold text-gray-400 pl-1">
+                          {pos.details.map((detail, i) => (
+                            <li key={i} className="flex items-start gap-1.5">
+                              <span className="text-gold-500 shrink-0">•</span>
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Benefits & Support */}
+            {program.benefits.length > 0 && (
+              <div className="space-y-4">
+                {program.benefits.map((benefit, idx) => (
+                  <div key={idx} className="space-y-3">
+                    <h4 className="text-xs font-bold text-white uppercase tracking-widest flex items-center gap-1.5">
+                      <Check className="w-4 h-4 text-gold-500" />
+                      {benefit.heading}
+                    </h4>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm md:text-base font-bold text-gray-300 pl-1">
+                      {benefit.items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="p-1 bg-white/10 rounded-full text-emerald-400 shrink-0">✓</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Right column: Image display - 4 cols on desktop */}
+          <div className="order-1 lg:order-2 lg:col-span-4">
+            <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0B1A4A] relative group shadow-lg">
+              <img 
+                src={program.imageUrl} 
+                alt={`${program.title} Flyer`} 
+                loading="lazy"
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-3 border-t border-gold-500/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          {program.note && (
+            <span className="text-sm md:text-base text-gray-400 italic">
+              {program.note}
+            </span>
+          )}
+          <Link
+            id={`${program.id}-cta-start`}
+            to={`/book/travels?destination=${encodeURIComponent(program.destination)}`}
+            className="bg-gold-gradient text-navy-900 font-black px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:brightness-105 transition-all text-center w-full sm:w-auto"
+          >
+            {program.ctaText}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // Extract YouTube video ID from various URL formats
 function getYouTubeId(url: string): string {
@@ -218,6 +374,40 @@ export default function ServicePage() {
                     <p className="text-sm md:text-lg text-gray-400 font-semibold mt-0.5">
                       Our verified pathways for study, work, exploration, and global migration.
                       </p>
+                    </div>
+
+                    {/* Quick-Jump Navigation */}
+                    <div className="p-4 bg-white/5 border border-gold-500/20 rounded-2xl">
+                      <h4 className="text-xs font-bold text-gold-500 uppercase tracking-widest flex items-center gap-1.5 mb-3">
+                        <List className="w-4 h-4" />
+                        Jump to a Visa Package
+                      </h4>
+                      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+                        {[
+                          { id: "canada-program-section", label: "Canada", flag: "🇨🇦" },
+                          { id: "qatar-program-section", label: "Qatar", flag: "🇶🇦" },
+                          { id: "oman-program-section", label: "Oman", flag: "🇴🇲" },
+                          { id: "georgia-program-section", label: "Georgia", flag: "🇬🇪" },
+                          { id: "germany-program-section", label: "Germany", flag: "🇩🇪" },
+                          { id: "serbia-program-section", label: "Serbia", flag: "🇷🇸" },
+                          { id: "albania-program-section", label: "Albania", flag: "🇦🇱" },
+                          { id: "poland-program-section", label: "Poland", flag: "🇵🇱" },
+                          { id: "bulgaria-program-section", label: "Bulgaria", flag: "🇧🇬" },
+                          { id: "croatia-program-section", label: "Croatia", flag: "🇭🇷" },
+                          { id: "armenia-program-section", label: "Armenia", flag: "🇦🇲" },
+                          { id: "ukraine-program-section", label: "Ukraine", flag: "🇺🇦" },
+                          { id: "montenegro-program-section", label: "Montenegro", flag: "🇲🇪" },
+                          { id: "other-programs-section", label: "Other Programs", flag: "🌍" }
+                        ].map(item => (
+                          <a
+                            key={item.id}
+                            href={`#${item.id}`}
+                            className="bg-[#0B1A4A]/60 border border-white/10 hover:border-gold-500/40 hover:bg-gold-500/10 text-white text-xs md:text-sm font-bold px-4 py-2 rounded-md transition-all duration-300 text-center"
+                          >
+                            {item.flag} {item.label}
+                          </a>
+                        ))}
+                      </div>
                     </div>
 
                     <div id="canada-program-section" className="space-y-8">
@@ -923,8 +1113,26 @@ export default function ServicePage() {
                       </div>
                     </div>
 
+                    {/* European & Global Work Programs */}
+                    <div className="space-y-8">
+                      <div className="border-l-4 border-gold-500 pl-4 py-1">
+                        <h3 className="text-lg font-black text-white uppercase tracking-tight">
+                          European & Global Work Programs
+                        </h3>
+                        <p className="text-sm md:text-lg text-gray-400 font-semibold mt-0.5">
+                          Legal, transparent recruitment into in-demand roles across Europe — with full visa support, accommodation, and long-term career opportunities.
+                        </p>
+                      </div>
+
+                      {WORK_PROGRAMS.map(program => (
+                        <div key={program.id}>
+                          <WorkProgramSection program={program} />
+                        </div>
+                      ))}
+                    </div>
+
                     {/* Sub-section: Other Travel & Visa Programs */}
-                    <div className="space-y-4">
+                    <div id="other-programs-section" className="space-y-4">
                       <h4 className="text-xs font-black text-white uppercase tracking-widest border-b border-white/10 pb-2">
                         Other Travel & Visa Programs
                       </h4>

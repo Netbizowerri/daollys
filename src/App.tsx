@@ -4,6 +4,7 @@ import { AnimatePresence } from "motion/react";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import WhatsAppButton from "./components/layout/WhatsAppButton";
+import ScrollToTopButton from "./components/layout/ScrollToTopButton";
 import BottomActionBar from "./components/layout/BottomActionBar";
 
 // Page Views
@@ -75,6 +76,9 @@ export default function App() {
 
         {/* Global floating WhatsApp button */}
         <WhatsAppButton />
+
+        {/* Global floating scroll-to-top button */}
+        <ScrollToTopButton />
 
         {/* Persistent App-like Bottom Action bar (Only triggers on Mobile viewport) */}
         <BottomActionBar />

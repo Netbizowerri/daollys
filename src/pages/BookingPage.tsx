@@ -57,13 +57,6 @@ export default function BookingPage() {
               Secure Booking Terminal
             </h1>
           </div>
-          
-          <div className="text-left md:text-right">
-            <span className="text-[10px] text-white/40 uppercase font-black tracking-widest block">Service Route</span>
-            <span className="text-xs font-extrabold text-gray-300 uppercase">
-              Port Harcourt Desk &bull; Live Submit
-            </span>
-          </div>
         </div>
 
         {/* ================= SERVICE QUICK-SWITCHER PILLS (PRD 12.2) ================= */}
