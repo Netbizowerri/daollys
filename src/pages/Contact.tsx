@@ -61,7 +61,7 @@ export default function Contact() {
     }
   };
 
-  const whatsappUrl = "https://wa.me/2348146497746?text=Hello%20Da%20Ollys%20Integrated%20Services%2C%20I%20have%20a%20question%20regarding%20your%20services.";
+  const whatsappUrl = "https://wa.me/2349048518019?text=Hello%20Da%20Ollys%20Integrated%20Services%2C%20I%20have%20a%20question%20regarding%20your%20services.";
 
   return (
     <PageTransition>
@@ -114,8 +114,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold text-white uppercase tracking-wider">Direct Telephone Hotline</h3>
-                  <a href="tel:+2348146497746" className="text-[11px] text-gold-500 font-black mt-1 hover:underline block">
-                    +234 (0) 814 649 7746
+                  <a href="tel:+2349048518019" className="text-[11px] text-gold-500 font-black mt-1 hover:underline block">
+                    +234 (0) 904 851 8019
                   </a>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold text-white uppercase tracking-wider">Office Hours</h3>
-                  <p className="text-sm md:text-base text-gray-400 font-bold mt-1">Monday - Saturday: 8:00 AM - 6:00 PM (GMT +1)</p>
+                  <p className="text-sm md:text-base text-gray-400 font-bold mt-1">Monday - Saturday: 9:00 AM - 5:00 PM (GMT +1)</p>
                 </div>
               </div>
             </div>

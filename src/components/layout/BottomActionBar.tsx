@@ -31,7 +31,7 @@ export default function BottomActionBar() {
     return false;
   };
 
-  const whatsappUrl = "https://wa.me/2348146497746?text=Hello%20Da%20Ollys%20Integrated%20Services%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.";
+  const whatsappUrl = "https://wa.me/2349048518019?text=Hello%20Da%20Ollys%20Integrated%20Services%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.";
 
   const services = [
     {

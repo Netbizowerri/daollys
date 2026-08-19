@@ -66,7 +66,7 @@ export default function ThankYou() {
   };
 
   const content = getServiceCopy();
-  const whatsappUrl = "https://wa.me/2348146497746?text=Hello%20Da%20Ollys%20Integrated%20Services%2C%20I%20just%20submitted%20my%20booking%20and%20would%20like%20to%20speed%20up%20feedback.";
+  const whatsappUrl = "https://wa.me/2349048518019?text=Hello%20Da%20Ollys%20Integrated%20Services%2C%20I%20just%20submitted%20my%20booking%20and%20would%20like%20to%20speed%20up%20feedback.";
 
   return (
     <PageTransition>

@@ -102,7 +102,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-2.5">
             <Phone className="w-4 h-4 text-gold-500 shrink-0" />
-            <a href="tel:+2348146497746" className="hover:text-gold-300 transition-colors">+234 (0) 814 649 7746</a>
+            <a href="tel:+2349048518019" className="hover:text-gold-300 transition-colors">+234 (0) 904 851 8019</a>
           </div>
           <div className="flex items-center gap-2.5">
             <Mail className="w-4 h-4 text-gold-500 shrink-0" />
@@ -110,7 +110,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-2.5">
             <Clock className="w-4 h-4 text-gold-500 shrink-0" />
-            <span>Mon - Sat: 8:00 AM - 6:00 PM</span>
+            <span>Mon - Sat: 9:00 AM - 5:00 PM</span>
           </div>
         </div>
       </div>
